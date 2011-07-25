@@ -42,7 +42,7 @@ gem "heroku"
 
 # gems required by basecamp api
   gem 'xml-simple'
-  gem 'basecamp', :git://github.com/anibalcucco/basecamp-wrapper.git #instead of wrapper, ill use this gem
+  gem 'basecamp', :git => "git://github.com/anibalcucco/basecamp-wrapper.git"
 
 
 
