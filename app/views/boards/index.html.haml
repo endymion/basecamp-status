@@ -1,0 +1,12 @@
+#content
+  - @hash.each do |key,value|
+    %ul
+      %li
+        id:
+        = value["id"]
+      %li
+        content:
+        =value["content"]
+      %li
+        due at:
+        =value["due_at"]
