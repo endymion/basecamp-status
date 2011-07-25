@@ -5,7 +5,12 @@ gem 'rails', '3.0.9'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'sqlite3' #db
+
+gem "haml"
+gem "compass"
+gem "jquery-rails"
+gem "heroku"
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -26,14 +31,18 @@ gem 'sqlite3'
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
-# group :development, :test do
+  group :development, :test do
 #   gem 'webrat'
-# end
-gem "haml"
-gem "compass"
-gem "jquery-rails"
-gem "rspec-rails", ">= 2.0.0.beta.17"
-gem "factory_girl"
-gem "cucumber"
-gem "cucumber-rails"
-gem "capybara"
+    gem "rspec-rails", ">= 2.0.0.beta.17"
+    gem "factory_girl"
+    gem "cucumber"
+    gem "cucumber-rails"
+    gem "capybara"
+  end
+
+# gems required by basecamp api
+  gem 'xml-simple'
+  gem 'basecamp', :git://github.com/anibalcucco/basecamp-wrapper.git #instead of wrapper, ill use this gem
+
+
+

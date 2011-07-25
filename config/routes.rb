@@ -1,5 +1,7 @@
 BasecampStatus::Application.routes.draw do
   root :to => 'root#root'
+  
+  resources :boards
 
   get "root/root"
 
