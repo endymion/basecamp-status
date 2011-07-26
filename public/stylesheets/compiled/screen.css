@@ -493,14 +493,31 @@ form.bp form.inline p {
   margin-bottom: 0;
 }
 
-/* line 35, ../../../app/stylesheets/screen.scss */
+/* line 33, ../../../app/stylesheets/screen.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 36, ../../../app/stylesheets/screen.scss */
+body.one-col {
+  background-color: #e5e5e5;
+}
+/* line 40, ../../../app/stylesheets/screen.scss */
 body.one-col #container {
   width: 950px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
+  background-color: white;
+  min-height: 95%;
+  height: 95%;
+  padding: 0 20px 0 20px;
+  margin: 20px auto 0 auto;
+  -moz-box-shadow: 3px 3px 4px #BBB;
+  -webkit-box-shadow: 3px 3px 4px #BBB;
+  box-shadow: 3px 3px 4px #BBB;
 }
-/* line 38, ../../../app/stylesheets/screen.scss */
+/* line 52, ../../../app/stylesheets/screen.scss */
 body.one-col #header {
   display: inline;
   float: left;
@@ -514,25 +531,58 @@ body.one-col #header {
 * html body.one-col #header {
   overflow-x: hidden;
 }
-/* line 44, ../../../app/stylesheets/screen.scss */
-body.one-col #footer {
-  display: inline;
-  float: left;
-  margin-right: 10px;
-  width: 950px;
-}
-/* line 147, ../../../../../.rvm/gems/ruby-1.9.2-p180@basecamp-status/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html body.one-col #footer {
-  overflow-x: hidden;
-}
-/* line 47, ../../../app/stylesheets/screen.scss */
+/* line 59, ../../../app/stylesheets/screen.scss */
 body.one-col #content {
   display: inline;
   float: left;
   margin-right: 10px;
   width: 950px;
 }
+/* line 61, ../../../app/stylesheets/screen.scss */
+body.one-col #content ul li {
+  list-style: none;
+}
 /* line 147, ../../../../../.rvm/gems/ruby-1.9.2-p180@basecamp-status/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html body.one-col #content {
   overflow-x: hidden;
+}
+/* line 68, ../../../app/stylesheets/screen.scss */
+body.one-col .project-name {
+  color: green;
+  font-family: 'Didact Gothic', sans-serif;
+  background: #c2c2c2;
+  padding: 2px;
+  font-size: 20px;
+}
+/* line 76, ../../../app/stylesheets/screen.scss */
+body.one-col .todo-list {
+  padding-left: 40px;
+  margin: 10px 0 0 0;
+  font-family: Arial, Helvetica,sans-serif;
+  font-size: 12px;
+  font-style: italic;
+}
+/* line 84, ../../../app/stylesheets/screen.scss */
+body.one-col .items {
+  margin: 10px 0 10px 0;
+  min-height: 20px;
+}
+/* line 89, ../../../app/stylesheets/screen.scss */
+body.one-col .item {
+  padding-left: 40px;
+  margin: 0 0 5px 0;
+  color: blue;
+  font-size: 16px;
+  font-style: normal;
+}
+/* line 97, ../../../app/stylesheets/screen.scss */
+body.one-col .assigned-due {
+  margin: 0 0 0 10px;
+  font-size: 12px;
+  color: #464646;
+  background-color: #eeeeee;
+  padding: 2px 10px 2px 10px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -border-radius: 5px;
 }

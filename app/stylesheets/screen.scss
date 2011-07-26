@@ -30,21 +30,79 @@ form.bp {
   @include blueprint-form;
   // You'll probably want to remove the scaffolding once you start styling your site.
   @include blueprint-scaffolding; }
-
+html, body{
+  height:100%;
+}
 body.one-col {
+
+background-color: #e5e5e5; 
+  
   #container {
-    @include container; 
+    @include container;
+    background-color: white;
+    min-height: 95%;
+    height: 95%;
+    padding: 0 20px 0 20px;
+    margin: 20px auto 0 auto;
+    -moz-box-shadow: 3px 3px 4px #BBB;
+    -webkit-box-shadow: 3px 3px 4px #BBB;
+    box-shadow: 3px 3px 4px #BBB;
   }
+  
   #header{
     @include column($blueprint-grid-columns);
     text-align: center;
     font-size: 50px;
     font-family: 'Didact Gothic', sans-serif;
   } 
-  #footer {
-    @include column($blueprint-grid-columns);    
-  }
+  
   #content {
+    ul{
+      li{
+        list-style: none;
+      }
+    }
     @include column($blueprint-grid-columns);
   }
+
+  .project-name{
+    color: green;
+    font-family: 'Didact Gothic', sans-serif;
+    background: #c2c2c2;
+    padding: 2px;
+    font-size:20px
+  }
+  
+  .todo-list{
+    @include prepend(1);
+    margin: 10px 0 0 0;
+    font-family: Arial, Helvetica,sans-serif;
+    font-size:12px;
+    font-style: italic;
+  }
+
+  .items{
+    margin: 10px 0 10px 0;
+    min-height: 20px;
+  }
+
+  .item {
+    @include prepend(1);
+    margin: 0 0 5px 0;
+    color: blue;
+    font-size:16px;
+    font-style: normal;
+  }
+
+  .assigned-due{
+    margin: 0 0 0 10px;
+    font-size:12px;
+    color: #464646;
+    background-color: #eeeeee;
+    padding: 2px 10px 2px 10px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    -border-radius:5px;
+  }
+  
 }

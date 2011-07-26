@@ -1,14 +1,14 @@
 - @p.each do |p|
   .project
-    = p.name
+    %span.project-name
+      = p.name 
     - @b.get_todos(p).each do |todo|
       .todo-list
-        = todo.description
-        %ul
+        = todo.description.nil? ? "No description" : todo.description
+        %ul.items
           - todo.todo_items.each do |i|
-            %li.item
+            %li.item              
               = i.content
-              Assigned to:
-              = i.responsible_party_name if i.respond_to?(:responsible_party_name)
-              Due:
-              = i.due_at if i.respond_to?(:due_at)
+              %span.assigned-due
+                = i.responsible_party_name if i.respond_to?(:responsible_party_name)
+                = i.due_at.strftime("%d %b %Y") if (i.respond_to?(:due_at) && !i.due_at.nil?)
