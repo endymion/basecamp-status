@@ -4,7 +4,7 @@
       = p.name 
     - @b.get_todos(p).each do |todo|
       .todo-list
-        = todo.description.nil? ? "No description" : todo.description
+        = todo.name.nil? ? todo.description : todo.name
         %ul.items
           - todo.todo_items.each do |i|
             %li.item              

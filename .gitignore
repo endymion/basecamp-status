@@ -4,3 +4,5 @@ design
 log/*.log
 tmp/**/*
 db/*.sqlite3
+*.swp
+*.swo
