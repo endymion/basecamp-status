@@ -1,12 +1,14 @@
-#content
-  - @hash.each do |key,value|
-    %ul
-      %li
-        id:
-        = value["id"]
-      %li
-        content:
-        =value["content"]
-      %li
-        due at:
-        =value["due_at"]
+- @p.each do |p|
+  .project
+    = p.name
+    - @b.get_todos(p).each do |todo|
+      .todo-list
+        = todo.description
+        %ul
+          - todo.todo_items.each do |i|
+            %li.item
+              = i.content
+              Assigned to:
+              = i.responsible_party_name if i.respond_to?(:responsible_party_name)
+              Due:
+              = i.due_at if i.respond_to?(:due_at)
