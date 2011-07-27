@@ -10,7 +10,9 @@
             - todo.todo_items.each do |i|
               %li.item              
                 = i.content
-                %span.assigned-due
-                  = i.responsible_party_name if i.respond_to?(:responsible_party_name)
-                %span.date-due
-                  = i.due_at.strftime("%d %b %Y") if (i.respond_to?(:due_at) && !i.due_at.nil?)
+                - if i.respond_to?(:responsible_party_name)
+                  %span.assigned-due
+                    = i.responsible_party_name
+                - if (i.respond_to?(:due_at) && !i.due_at.nil?)
+                  %span.date-due 
+                    = i.due_at.strftime("%d %b %Y")
