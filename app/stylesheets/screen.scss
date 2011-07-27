@@ -32,94 +32,99 @@ form.bp {
   @include blueprint-scaffolding; }
 
 body.one-col {
-background: #5a5a5a; /* for non-css3 browsers */
+  background: #5a5a5a; /* for non-css3 browsers */
 
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#808080', endColorstr='#5a5a5a'); /* for IE */
-background: -webkit-gradient(linear, left top, left bottom, from(#808080), to(#5a5a5a)); /* for webkit browsers */
-background: -moz-linear-gradient(top,  #808080,  #5a5a5a); /* for firefox 3.6+ */ 
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#808080', endColorstr='#5a5a5a'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#808080), to(#5a5a5a)); /* for webkit browsers */
+  background: -moz-linear-gradient(top,  #808080,  #5a5a5a); /* for firefox 3.6+ */ 
 
 
-#container {
+  #container {
     @include container;
     background-color: white;
     padding: 0 30px 0 0px;
     width: 96%;
     margin-bottom: 30px;
-}
+  }
 
-#wrapper {
-width: 70%;
-margin: 10px auto;
-}
-  
-h1 {
-  font-size: 35px;
-  color: white;
-text-shadow: 1px 1px 1px #434343;
-letter-spacing: -1px;
-}
+  #wrapper {
+    width: 70%;
+    margin: 10px auto;
+  }
+
+  h1 {
+    font-size: 35px;
+    color: white;
+    text-shadow: 1px 1px 1px #434343;
+    letter-spacing: -1px;
+  }
 
   #header{
     @include column($blueprint-grid-columns);
-  width: 99%;
+    width: 99%;
   } 
 
   #logo {
-  float: left;
-  background-image: url(/images/highlight.png);
-  width: 255px;
-  margin-bottom:0px;
-}
+    float: left;
+    background-image: url(/images/highlight.png);
+    width: 255px;
+    margin-bottom:0px;
+  }
   #title {
-  float: right;
-margin-top: 30px;
-}  
-#content li{
-  list-style: none;
-  @include column($blueprint-grid-columns);
+    float: right;
+    margin-top: 30px;
+  }  
+  #content li{
+    list-style: none;
+    @include column($blueprint-grid-columns);
   }
 
 
-.project-name{
+  .project-name {
+    margin: 5px 0;
+  }
+
+  .project-name h1{
     color: white;
     font-size:20px;
     padding: 4px 20px;
-	background: #305972; /* for non-css3 browsers */
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#527792', endColorstr='#305972'); /* for IE */
-	background: -webkit-gradient(linear, left top, left bottom, from(#527792), to(#305972)); /* for webkit browsers */
-	background: -moz-linear-gradient(top,  #527792,  #305972); /* for firefox 3.6+ */ 
-	border: 1px #305972 solid;
-	width: 35%;
-	box-shadow: 0 4px 2px -2px #bbbaba;
-}
-  
+    display: inline;
+    background: #305972; /* for non-css3 browsers */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#527792', endColorstr='#305972'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#527792), to(#305972)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #527792,  #305972); /* for firefox 3.6+ */ 
+    border: 1px #305972 solid;
+    box-shadow: 0 4px 2px -2px #bbbaba;
+  }
+
+
   .todo-list{
     @include prepend(1);
     margin: 20px 0 0 30px;
     font-size:18px;
     color: #305972;
     border-bottom: #ccc dotted 1px;
-	padding: 0 0 30px 0px;
+    padding: 0 0 30px 0px;
   }
 
-.items{
+  .items{
     margin: 10px 0 10px 0;
     min-height: 20px;
   }
 
-ul{
-	margin-top: 20px;
-}
+  ul{
+    margin-top: 20px;
+  }
 
 
-li.item {
+  li.item {
     @include prepend(1);
     color: #303030;
     font-size:14px;
     font-style: normal;
-	line-height: 22px;
-	font-family: arial;
-	padding-left: 0px;
+    line-height: 22px;
+    font-family: arial;
+    padding-left: 0px;
   }
 
   .assigned-due, .date-due{
@@ -132,5 +137,5 @@ li.item {
     -webkit-border-radius:5px;
     -border-radius:5px;
   }
-  
+
 }
