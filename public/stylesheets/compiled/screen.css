@@ -530,7 +530,6 @@ body.one-col h1 {
 /* line 62, ../../../app/stylesheets/screen.scss */
 body.one-col #header {
   display: inline;
-  float: left;
   margin-right: 10px;
   width: 950px;
   width: 99%;
@@ -583,7 +582,7 @@ body.one-col .project-name {
 /* line 96, ../../../app/stylesheets/screen.scss */
 body.one-col .todo-list {
   padding-left: 40px;
-  margin: 30px 0 0 30px;
+  margin: 20px 0 0 30px;
   font-size: 18px;
   color: #305972;
   border-bottom: #ccc dotted 1px;
