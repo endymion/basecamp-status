@@ -2,7 +2,7 @@
   - @p.each do |p|
     .project
       .project-name
-        %h1= name
+        %h1= p.name
       - @b.get_todos(p).each do |todo|
         .todo-list
           = todo.name.nil? ? todo.description : todo.name
