@@ -12,6 +12,8 @@
     = csrf_meta_tag
     %script{:type => "text/javascript", :src => "http://use.typekit.com/dju8kxh.js"}
     %script{:type => "text/javascript"} try{Typekit.load();}catch(e){}
+    %link{:href=>"/images/favicon.png", :rel =>"Shortcut Icon"}
+
   %body.one-col
     #wrapper
       #header
@@ -22,3 +24,4 @@
       #container
         #content
           = yield
+      

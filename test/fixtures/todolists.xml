@@ -1,0 +1,21 @@
+HTTP/1.1 200 OK
+Accept: application/xml
+Content-Type: application/xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<todo-lists type="array">
+  <todo-list>
+    <completed-count type="integer">0</completed-count>
+    <description>testing todo list</description>
+    <id type="integer">15312005</id>
+    <milestone-id type="integer" nil="true"></milestone-id>
+    <name>Basecamp-status todo list</name>
+    <position type="integer">4</position>
+    <private type="boolean">false</private>
+    <project-id type="integer">7638134</project-id>
+    <tracked type="boolean">false</tracked>
+    <uncompleted-count type="integer">3</uncompleted-count>
+    <complete>false</complete>
+  </todo-list>
+</todo-lists>
+
