@@ -61,6 +61,7 @@ body.one-col {
 
   #header{
     @include column($blueprint-grid-columns);
+    float:none;
     width: 99%;
   } 
 
