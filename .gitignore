@@ -6,3 +6,6 @@ tmp/**/*
 db/*.sqlite3
 *.swp
 *.swo
+/lib/generators/haml
+/lib/generators/haml/*
+
