@@ -539,19 +539,19 @@ body.one-col #header {
 * html body.one-col #header {
   overflow-x: hidden;
 }
-/* line 66, ../../../app/stylesheets/screen.scss */
+/* line 67, ../../../app/stylesheets/screen.scss */
 body.one-col #logo {
   float: left;
   background-image: url(/images/highlight.png);
   width: 255px;
   margin-bottom: 0px;
 }
-/* line 72, ../../../app/stylesheets/screen.scss */
+/* line 73, ../../../app/stylesheets/screen.scss */
 body.one-col #title {
   float: right;
   margin-top: 30px;
 }
-/* line 76, ../../../app/stylesheets/screen.scss */
+/* line 77, ../../../app/stylesheets/screen.scss */
 body.one-col #content li {
   list-style: none;
   display: inline;
@@ -563,7 +563,7 @@ body.one-col #content li {
 * html body.one-col #content li {
   overflow-x: hidden;
 }
-/* line 82, ../../../app/stylesheets/screen.scss */
+/* line 83, ../../../app/stylesheets/screen.scss */
 body.one-col .project-name {
   color: white;
   font-size: 20px;
@@ -580,7 +580,7 @@ body.one-col .project-name {
   width: 35%;
   box-shadow: 0 4px 2px -2px #bbbaba;
 }
-/* line 95, ../../../app/stylesheets/screen.scss */
+/* line 96, ../../../app/stylesheets/screen.scss */
 body.one-col .todo-list {
   padding-left: 40px;
   margin: 30px 0 0 30px;
@@ -589,16 +589,16 @@ body.one-col .todo-list {
   border-bottom: #ccc dotted 1px;
   padding: 0 0 30px 0px;
 }
-/* line 104, ../../../app/stylesheets/screen.scss */
+/* line 105, ../../../app/stylesheets/screen.scss */
 body.one-col .items {
   margin: 10px 0 10px 0;
   min-height: 20px;
 }
-/* line 109, ../../../app/stylesheets/screen.scss */
+/* line 110, ../../../app/stylesheets/screen.scss */
 body.one-col ul {
   margin-top: 20px;
 }
-/* line 114, ../../../app/stylesheets/screen.scss */
+/* line 115, ../../../app/stylesheets/screen.scss */
 body.one-col li.item {
   padding-left: 40px;
   color: #303030;
@@ -608,7 +608,7 @@ body.one-col li.item {
   font-family: arial;
   padding-left: 0px;
 }
-/* line 124, ../../../app/stylesheets/screen.scss */
+/* line 125, ../../../app/stylesheets/screen.scss */
 body.one-col .assigned-due, body.one-col .date-due {
   margin: 0 0 0 10px;
   font-size: 12px;

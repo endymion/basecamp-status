@@ -63,6 +63,7 @@ letter-spacing: -1px;
     @include column($blueprint-grid-columns);
   width: 99%;
   } 
+
   #logo {
   float: left;
   background-image: url(/images/highlight.png);
