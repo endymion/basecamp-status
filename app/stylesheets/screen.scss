@@ -30,71 +30,98 @@ form.bp {
   @include blueprint-form;
   // You'll probably want to remove the scaffolding once you start styling your site.
   @include blueprint-scaffolding; }
-html, body{
-  height:100%;
-}
-body.one-col {
 
-background-color: #e5e5e5; 
-  
-  #container {
+body.one-col {
+background: #5a5a5a; /* for non-css3 browsers */
+
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#808080', endColorstr='#5a5a5a'); /* for IE */
+background: -webkit-gradient(linear, left top, left bottom, from(#808080), to(#5a5a5a)); /* for webkit browsers */
+background: -moz-linear-gradient(top,  #808080,  #5a5a5a); /* for firefox 3.6+ */ 
+
+
+#container {
     @include container;
     background-color: white;
-    min-height: 95%;
-    height: 95%;
-    padding: 0 20px 0 20px;
-    margin: 20px auto 0 auto;
-    -moz-box-shadow: 3px 3px 4px #BBB;
-    -webkit-box-shadow: 3px 3px 4px #BBB;
-    box-shadow: 3px 3px 4px #BBB;
-  }
+    padding: 0 30px 0 0px;
+    width: 96%;
+    margin-bottom: 30px;
+}
+
+#wrapper {
+width: 70%;
+margin: 10px auto;
+}
   
+h1 {
+  font-size: 35px;
+  color: white;
+text-shadow: 1px 1px 1px #434343;
+letter-spacing: -1px;
+}
+
   #header{
     @include column($blueprint-grid-columns);
-    text-align: center;
-    font-size: 50px;
-    font-family: 'Didact Gothic', sans-serif;
+  width: 99%;
   } 
-  
-  #content {
-    ul{
-      li{
-        list-style: none;
-      }
-    }
-    @include column($blueprint-grid-columns);
+  #logo {
+  float: left;
+  background-image: url(/images/highlight.png);
+  width: 255px;
+  margin-bottom:0px;
+}
+  #title {
+  float: right;
+margin-top: 30px;
+}  
+#content li{
+  list-style: none;
+  @include column($blueprint-grid-columns);
   }
 
-  .project-name{
-    color: green;
-    font-family: 'Didact Gothic', sans-serif;
-    background: #c2c2c2;
-    padding: 2px;
-    font-size:20px
-  }
+
+.project-name{
+    color: white;
+    font-size:20px;
+    padding: 4px 20px;
+	background: #305972; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#527792', endColorstr='#305972'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#527792), to(#305972)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #527792,  #305972); /* for firefox 3.6+ */ 
+	border: 1px #305972 solid;
+	width: 35%;
+	box-shadow: 0 4px 2px -2px #bbbaba;
+}
   
   .todo-list{
     @include prepend(1);
-    margin: 10px 0 0 0;
-    font-family: Arial, Helvetica,sans-serif;
-    font-size:12px;
-    font-style: italic;
+    margin: 30px 0 0 30px;
+    font-size:18px;
+    color: #305972;
+    border-bottom: #ccc dotted 1px;
+	padding: 0 0 30px 0px;
   }
 
-  .items{
+.items{
     margin: 10px 0 10px 0;
     min-height: 20px;
   }
 
-  .item {
+ul{
+	margin-top: 20px;
+}
+
+
+li.item {
     @include prepend(1);
-    margin: 0 0 5px 0;
-    color: blue;
-    font-size:16px;
+    color: #303030;
+    font-size:14px;
     font-style: normal;
+	line-height: 22px;
+	font-family: arial;
+	padding-left: 0px;
   }
 
-  .assigned-due{
+  .assigned-due, .date-due{
     margin: 0 0 0 10px;
     font-size:12px;
     color: #464646;

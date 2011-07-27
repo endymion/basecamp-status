@@ -1,15 +1,16 @@
 - unless @p.nil?
-  - @p.each do |project|
+  - @p.each do |p|
     .project
-      %span.project-name
-        = project.name 
-      - @b.get_todos(project).each do |todo|
+      .project-name
+        = p.name 
+      - @b.get_todos(p).each do |todo|
         .todo-list
-          = todo.name
+          = todo.name.nil? ? todo.description : todo.name
           %ul.items
             - todo.todo_items.each do |i|
               %li.item              
                 = i.content
                 %span.assigned-due
                   = i.responsible_party_name if i.respond_to?(:responsible_party_name)
-                  = i.due_at.strftime("%d %b %Y") unless i.due_at.nil?
+                %span.date-due
+                  = i.due_at.strftime("%d %b %Y") if (i.respond_to?(:due_at) && !i.due_at.nil?)
