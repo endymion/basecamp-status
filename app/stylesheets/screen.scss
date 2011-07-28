@@ -45,6 +45,7 @@ body.one-col {
     padding: 0 30px 0 0px;
     width: 96%;
     margin-bottom: 30px;
+    min-height: 565px;
   }
 
   #wrapper {
@@ -79,7 +80,10 @@ body.one-col {
     @include column($blueprint-grid-columns);
   }
 
-
+  .project{
+    margin: 0;
+  }
+  
   .project-name {
     margin: 5px 0;
   }
@@ -97,19 +101,18 @@ body.one-col {
     box-shadow: 0 4px 2px -2px #bbbaba;
   }
 
-
   .todo-list{
     @include prepend(1);
     margin: 20px 0 0 30px;
     font-size:18px;
     color: #305972;
     border-bottom: #ccc dotted 1px;
-    padding: 0 0 30px 0px;
+    padding: 0 0 10px 0px;
   }
 
   .items{
     margin: 10px 0 10px 0;
-    min-height: 20px;
+    min-height: 5px;
   }
 
   ul{
@@ -136,6 +139,10 @@ body.one-col {
     -moz-border-radius:5px;
     -webkit-border-radius:5px;
     -border-radius:5px;
+  }
+
+  .clear{
+    clear: both;
   }
 
 }
