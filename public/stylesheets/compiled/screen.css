@@ -514,44 +514,46 @@ body.one-col #container {
   padding: 0 30px 0 0px;
   width: 96%;
   margin-bottom: 30px;
+  min-height: 565px;
 }
-/* line 50, ../../../app/stylesheets/screen.scss */
+/* line 51, ../../../app/stylesheets/screen.scss */
 body.one-col #wrapper {
   width: 70%;
   margin: 10px auto;
 }
-/* line 55, ../../../app/stylesheets/screen.scss */
+/* line 56, ../../../app/stylesheets/screen.scss */
 body.one-col h1 {
   font-size: 35px;
   color: white;
   text-shadow: 1px 1px 1px #434343;
   letter-spacing: -1px;
 }
-/* line 62, ../../../app/stylesheets/screen.scss */
+/* line 63, ../../../app/stylesheets/screen.scss */
 body.one-col #header {
   display: inline;
   float: left;
   margin-right: 10px;
   width: 950px;
-  width: 99%;
+  float: none;
+  width: 98%;
 }
 /* line 147, ../../../../../.rvm/gems/ruby-1.9.2-p180@basecamp-status/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html body.one-col #header {
   overflow-x: hidden;
 }
-/* line 67, ../../../app/stylesheets/screen.scss */
+/* line 69, ../../../app/stylesheets/screen.scss */
 body.one-col #logo {
   float: left;
   background-image: url(/images/highlight.png);
   width: 255px;
   margin-bottom: 0px;
 }
-/* line 73, ../../../app/stylesheets/screen.scss */
+/* line 75, ../../../app/stylesheets/screen.scss */
 body.one-col #title {
   float: right;
   margin-top: 30px;
 }
-/* line 77, ../../../app/stylesheets/screen.scss */
+/* line 79, ../../../app/stylesheets/screen.scss */
 body.one-col #content li {
   list-style: none;
   display: inline;
@@ -563,15 +565,15 @@ body.one-col #content li {
 * html body.one-col #content li {
   overflow-x: hidden;
 }
-/* line 82, ../../../app/stylesheets/screen.scss */
+/* line 84, ../../../app/stylesheets/screen.scss */
 body.one-col .project {
   margin: 0;
 }
-/* line 86, ../../../app/stylesheets/screen.scss */
+/* line 88, ../../../app/stylesheets/screen.scss */
 body.one-col .project-name {
   margin: 5px 0;
 }
-/* line 90, ../../../app/stylesheets/screen.scss */
+/* line 92, ../../../app/stylesheets/screen.scss */
 body.one-col .project-name h1 {
   color: white;
   font-size: 20px;
@@ -588,7 +590,7 @@ body.one-col .project-name h1 {
   border: 1px #305972 solid;
   box-shadow: 0 4px 2px -2px #bbbaba;
 }
-/* line 103, ../../../app/stylesheets/screen.scss */
+/* line 105, ../../../app/stylesheets/screen.scss */
 body.one-col .todo-list {
   padding-left: 40px;
   margin: 20px 0 0 30px;
@@ -597,16 +599,16 @@ body.one-col .todo-list {
   border-bottom: #ccc dotted 1px;
   padding: 0 0 10px 0px;
 }
-/* line 112, ../../../app/stylesheets/screen.scss */
+/* line 114, ../../../app/stylesheets/screen.scss */
 body.one-col .items {
   margin: 10px 0 10px 0;
   min-height: 5px;
 }
-/* line 117, ../../../app/stylesheets/screen.scss */
+/* line 119, ../../../app/stylesheets/screen.scss */
 body.one-col ul {
   margin-top: 20px;
 }
-/* line 122, ../../../app/stylesheets/screen.scss */
+/* line 124, ../../../app/stylesheets/screen.scss */
 body.one-col li.item {
   padding-left: 40px;
   color: #303030;
@@ -616,7 +618,7 @@ body.one-col li.item {
   font-family: arial;
   padding-left: 0px;
 }
-/* line 132, ../../../app/stylesheets/screen.scss */
+/* line 134, ../../../app/stylesheets/screen.scss */
 body.one-col .assigned-due, body.one-col .date-due {
   margin: 0 0 0 10px;
   font-size: 12px;
@@ -627,7 +629,7 @@ body.one-col .assigned-due, body.one-col .date-due {
   -webkit-border-radius: 5px;
   -border-radius: 5px;
 }
-/* line 143, ../../../app/stylesheets/screen.scss */
+/* line 145, ../../../app/stylesheets/screen.scss */
 body.one-col .clear {
   clear: both;
 }
