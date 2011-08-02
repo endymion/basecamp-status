@@ -64,6 +64,13 @@ body.one-col {
     @include column($blueprint-grid-columns);
     width: 99%;
     float: none;
+    h3{
+      font-size:15px;
+      color: white;
+      text-shadow: 1px 1px 1px #434343;
+      letter-spacing: -1px;
+      text-align: right;
+    }
   } 
 
   #logo {
