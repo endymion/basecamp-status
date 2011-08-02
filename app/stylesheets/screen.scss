@@ -138,7 +138,7 @@ body.one-col {
     padding-left: 0px;
   }
 
-  .assigned-due, .date-due{
+  .assigned-to, .due-date{
     margin: 0 0 0 10px;
     font-size:12px;
     color: #464646;
@@ -153,4 +153,20 @@ body.one-col {
     clear: both;
   }
 
+  #assigned{
+    float: right;
+    margin-top: 3px;
+    h3{
+      font-size:16px;
+      color: #555555;
+      text-shadow: 1px 1px 1px grey;
+      letter-spacing: -1px;
+      text-align: left;
+      float: left
+    }
+    #names{
+      float: right;
+      margin: 0 0 0 5px;
+    }
+  }
 }

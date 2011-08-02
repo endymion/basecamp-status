@@ -11,9 +11,9 @@
               %li.item              
                 = i.content
                 - if i.respond_to?(:responsible_party_name)
-                  %span.assigned-due
+                  %span.assigned-to
                     = i.responsible_party_name
                 - if (i.respond_to?(:due_at) && !i.due_at.nil?)
-                  %span.date-due 
+                  %span.due-date 
                     = i.due_at.strftime("%d %b %Y")
           %div.clear

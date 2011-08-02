@@ -627,7 +627,7 @@ body.one-col li.item {
   padding-left: 0px;
 }
 /* line 141, ../../../app/stylesheets/screen.scss */
-body.one-col .assigned-due, body.one-col .date-due {
+body.one-col .assigned-to, body.one-col .due-date {
   margin: 0 0 0 10px;
   font-size: 12px;
   color: #464646;
@@ -640,4 +640,23 @@ body.one-col .assigned-due, body.one-col .date-due {
 /* line 152, ../../../app/stylesheets/screen.scss */
 body.one-col .clear {
   clear: both;
+}
+/* line 156, ../../../app/stylesheets/screen.scss */
+body.one-col #assigned {
+  float: right;
+  margin-top: 3px;
+}
+/* line 159, ../../../app/stylesheets/screen.scss */
+body.one-col #assigned h3 {
+  font-size: 16px;
+  color: #555555;
+  text-shadow: 1px 1px 1px grey;
+  letter-spacing: -1px;
+  text-align: left;
+  float: left;
+}
+/* line 167, ../../../app/stylesheets/screen.scss */
+body.one-col #assigned #names {
+  float: right;
+  margin: 0 0 0 5px;
 }

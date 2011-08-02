@@ -7,8 +7,6 @@
     /[if lt IE 8]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
     = javascript_include_tag :defaults
-    -# Google fonts
-    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Didact+Gothic&v2'
     = csrf_meta_tag
     %script{:type => "text/javascript", :src => "http://use.typekit.com/dju8kxh.js"}
     %script{:type => "text/javascript"} try{Typekit.load();}catch(e){}
@@ -23,5 +21,8 @@
           %h1 Basecamp Status<br />
           %h3= "Rendered at #{@time}"
       #container
+        #assigned
+          %h3 Assigned to:
+          =select_tag(:names, options_for_select([['Assigned to', 0]]))
         #content
-          = yield    
+          = yield
