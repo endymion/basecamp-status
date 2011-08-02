@@ -19,11 +19,14 @@ function fill_select(){
 function filter_by_name(){
   name = names[$("#names").val()];
   $("span.assigned-to").each(function(){
+    if (name = "Assigned to"){
+      return false;
+    }
     if ($(this).text().trim() != name){
-      $(this).parent().fadeOut('slow');
+      $(this).parent().fadeIn('slow');
     }
     else{
-      $(this).parent().fadeIn('slow');
+      $(this).parent().fadeOut('slow');
     }
   });
 };
