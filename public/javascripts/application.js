@@ -16,25 +16,31 @@ function fill_select(){
   });
 };
 
-function filter_by_name(){  
-  name = names[$("#names").val()];
-  if ($("#names").val() == 0){
-    $(".item").each(function(){
-      $(this).fadeIn('fast');
-    })
-    return false;
-  }
+function show_all_tasks(){
+  $(".item").each(function(){
+    $(this).fadeIn('slow');
+  });
+}
+
+function hide_all_tasks(){
   $(".item").each(function(){
     $(this).fadeOut('fast');
-  })
-  $("span.assigned-to").each(function(){
-    if ($(this).text().trim() != name){
-      $(this).parent().fadeIn('slow');
-    }
-    else{
-      $(this).parent().fadeOut('slow');
-    }
   });
+}
+
+function filter_by_name(){  
+  if ($("#names").val() == 0){
+    show_all_tasks();
+  }
+  else{
+    name = names[$("#names").val()-1];
+    hide_all_tasks();
+    $("span.assigned-to").each(function(){
+      if ($(this).text().trim() == name){
+        $(this).parent().fadeIn('slow');
+      };
+    });
+  };
 };
 
 $(document).ready(function(){
