@@ -16,12 +16,18 @@ function fill_select(){
   });
 };
 
-function filter_by_name(){
+function filter_by_name(){  
   name = names[$("#names").val()];
+  if ($("#names").val() == 0){
+    $(".item").each(function(){
+      $(this).fadeIn('fast');
+    })
+    return false;
+  }
+  $(".item").each(function(){
+    $(this).fadeOut('fast');
+  })
   $("span.assigned-to").each(function(){
-    if (name = "Assigned to"){
-      return false;
-    }
     if ($(this).text().trim() != name){
       $(this).parent().fadeIn('slow');
     }
