@@ -1,16 +1,19 @@
+- curRow = 0
+- grayBG = false
 - unless @p.nil?
   - @p.each do |p|
-    .project
-      - @b.get_todos(p).each do |todo|
-        - todo.todo_items.each do |item|
-          %tr
-            %td
-            %td= p.name
-            %td= item.content
-            %td
-            %td= todo.name.nil? ? todo.description : todo.name
-            - if item.respond_to?(:responsible_party_name)
-              %td= item.responsible_party_name
-            - if (item.respond_to?(:due_at) && !item.due_at.nil?)
-              %td= item.due_at.strftime("%d %b %Y")
-        %div.clear
+    - @b.get_todos(p).each do |todo|
+      - todo.todo_items.each do |item|
+        - @margin = "margin-top:" + (curRow*30).to_s + "px"
+        .tableListElement{:style => @margin}
+          Prueba
+        - curRow += 1
+        -#%td= p.name
+        -#%td= item.content
+        -#%td
+        -#%td= todo.name.nil? ? todo.description : todo.name
+        -#- if item.respond_to?(:responsible_party_name)
+          -#%td= item.responsible_party_name
+        -#- if (item.respond_to?(:due_at) && !item.due_at.nil?)
+          -#%td= item.due_at.strftime("%d %b %Y")
+      -#%div.clear

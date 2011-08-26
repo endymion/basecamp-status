@@ -1,7 +1,7 @@
 require 'basecamp'
   
-  APITOKEN = 'fcc852785aee2af1756a4a4e7709385880013ce0'
-  URL = 'angelmg.basecamphq.com'
+  APITOKEN = ENV['BASECAMP_TOKEN']
+  URL = ENV['BASECAMP_URL']
   
 class Board
   

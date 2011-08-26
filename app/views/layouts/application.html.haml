@@ -20,18 +20,27 @@
         #title
           %h1 Basecamp Status<br />
           %h3= "Rendered at #{@time}"
+      %br/
       #container
-        #assigned
-          %h3 Assigned to:
-          =select_tag(:names, options_for_select([['Show All', 0]]))
-        %br
+        -# #assigned
+          -# %h3 Assigned to:
+          -# =select_tag(:names, options_for_select([['Show All', 0]]))
         #content
-          %table#todoTable{:border => "1"}
-            %th Venue
-            %th Project Name
-            %th Event Date
-            %th To-Do List
-            %th To-Do Item
-            %th Due Date
-            %th Assigned To
-          = yield
+          #tableTop
+            .tableColumnHeader.firstTableColumnHeader
+              Venue
+            .tableColumnHeader
+              Project Name
+            .tableColumnHeader
+              Event Date
+            .tableColumnHeader
+              To-Do List
+            .tableColumnHeader
+              To-Do Item
+            .tableColumnHeader
+              Due Date
+            .tableColumnHeader.lastTableColumnHeader
+              Assigned To
+          %br/
+          #tableList
+            = yield
