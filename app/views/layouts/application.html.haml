@@ -15,14 +15,23 @@
   %body.one-col
     #wrapper
       #header
-        #logo      
-          %img{:src => '/images/angelmanagement_logo.png'}
-        #title 
+        #logo
+          %img{:src => '/images/angelmanagement_logo_gray.png'}
+        #title
           %h1 Basecamp Status<br />
           %h3= "Rendered at #{@time}"
       #container
         #assigned
           %h3 Assigned to:
           =select_tag(:names, options_for_select([['Show All', 0]]))
+        %br
         #content
+          %table#todoTable{:border => "1"}
+            %th Venue
+            %th Project Name
+            %th Event Date
+            %th To-Do List
+            %th To-Do Item
+            %th Due Date
+            %th Assigned To
           = yield

@@ -1,19 +1,16 @@
 - unless @p.nil?
   - @p.each do |p|
     .project
-      .project-name
-        %h1= p.name
       - @b.get_todos(p).each do |todo|
-        .todo-list
-          = todo.name.nil? ? todo.description : todo.name
-          %ul.items
-            - todo.todo_items.each do |i|
-              %li.item              
-                = i.content
-                - if i.respond_to?(:responsible_party_name)
-                  %span.assigned-to
-                    = i.responsible_party_name
-                - if (i.respond_to?(:due_at) && !i.due_at.nil?)
-                  %span.due-date 
-                    = i.due_at.strftime("%d %b %Y")
-          %div.clear
+        - todo.todo_items.each do |item|
+          %tr
+            %td
+            %td= p.name
+            %td= item.content
+            %td
+            %td= todo.name.nil? ? todo.description : todo.name
+            - if item.respond_to?(:responsible_party_name)
+              %td= item.responsible_party_name
+            - if (item.respond_to?(:due_at) && !item.due_at.nil?)
+              %td= item.due_at.strftime("%d %b %Y")
+        %div.clear
