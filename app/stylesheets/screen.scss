@@ -139,12 +139,14 @@ body.one-col {
     padding: 0px;
     margin: 31px 0px 0px 0px;
     .tableListElement {
-      min-width: 110px;
-      max-width: 110px;
+      display: inline;
+      position: absolute; /* use different classes for each column */
+      min-width: 109px;
+      max-width: 109px;
       min-height: 30px;
       max-height: 30px;
       border: none;
-      border-right: #000 solid 1px;
+      border: #000 solid 1px;
       padding: 0px 10px;
       margin: 0px;
     }
