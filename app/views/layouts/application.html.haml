@@ -18,8 +18,7 @@
         #logo
           %img{:src => '/images/angelmanagement_logo_gray.png'}
         #title
-          %h1 Basecamp Status<br />
-          %h3= "Rendered at #{@time}"
+          %h1 Basecamp Action List
       %br/
       #container
         -# #assigned
@@ -27,19 +26,19 @@
           -# =select_tag(:names, options_for_select([['Show All', 0]]))
         #content
           #tableTop
-            .tableColumnHeader.firstTableColumnHeader
+            .tableColumnHeader.tableColumn0
               Venue
-            .tableColumnHeader
+            .tableColumnHeader.tableColumn1
               Project Name
-            .tableColumnHeader
+            .tableColumnHeader.tableColumn2
               Event Date
-            .tableColumnHeader
+            .tableColumnHeader.tableColumn3
               To-Do List
-            .tableColumnHeader
+            .tableColumnHeader.tableColumn4
               To-Do Item
-            .tableColumnHeader
+            .tableColumnHeader.tableColumn5
               Due Date
-            .tableColumnHeader.lastTableColumnHeader
+            .tableColumnHeader.tableColumn6
               Assigned To
           %br/
           #tableList

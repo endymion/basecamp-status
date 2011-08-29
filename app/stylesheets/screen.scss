@@ -52,30 +52,34 @@ body.one-col {
   }
 
   #wrapper {
-    width: 70%;
+    width: 90%;
     margin: 10px auto;
-  }
-
-  h1 {
-    font-size: 35px;
-    color: gray;
-    letter-spacing: -1px;
   }
 
   #header {
     @include column($blueprint-grid-columns);
-    width: 99%;
+    width: 50%;
     min-height: 100px;
     max-height: 100px;
     padding: 0px;
-    margin: 0px;
-    h3 {
-      font-size: 15px;
-      color: gray;
-      letter-spacing: -1px;
-      text-align: right;
-    }
-  } 
+    margin: 0px auto;
+    align: center;
+    float: center;
+  }
+  
+  #header h1 {
+    font-size: 3em;
+    font-weight: bold;
+    color: gray;
+    letter-spacing: -1px;
+  }
+  
+  #header h3 {
+    font-size: 1em;
+    color: gray;
+    letter-spacing: -1px;
+    text-align: right;
+  }
 
   #logo {
     float: left;
@@ -95,61 +99,138 @@ body.one-col {
   }
   
   #tableTop {
-    .tableColumnHeader {
-      display: inline;
-      float: left;
-      color: white;
-      font-weight: 800;
-      text-align: center;
-      min-width: 110px;
-      max-width: 110px;
-      max-height: 10px;
-      border: none;
-      border-right: #000 solid 1px;
-      padding: 20px 10px;
-      margin: 0px;
-      background: #5a5a5a; /* for non-css3 browsers */
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9dc462', endColorstr='#569551'); /* for IE */
-      background: -webkit-gradient(linear, left top, left bottom, from(#9dc462), to(#569551)); /* for webkit browsers */
-      background: -moz-linear-gradient(top,  #9dc462,  #569551); /* for firefox 3.6+ */
-    }
-    .firstTableColumnHeader {
-      -border-top-left-radius: 5px;
-      -moz-border-top-left-radius: 5px;
-      -webkit-border-top-left-radius: 5px;
-      -border-bottom-left-radius: 5px;
-      -moz-border-bottom-left-radius: 5px;
-      -webkit-border-bottom-left-radius: 5px;
-    }
-    .lastTableColumnHeader {
-      -border-top-right-radius: 5px;
-      -moz-border-top-right-radius: 5px;
-      -webkit-border-top-right-radius: 5px;
-      -border-bottom-right-radius: 5px;
-      -moz-border-bottom-right-radius: 5px;
-      -webkit-border-bottom-right-radius: 5px;
-      border: none;
-    }
+    margin: 0px auto;
+    padding: 0px auto;
+    align: center;
+  }
+  
+  #tableTop .tableColumnHeader {
+    display: inline;
+    float: left;
+    color: white;
+    font-weight: 800;
+    text-align: center;
+    max-height: 10px;
+    border: none;
+    border-right: #000 solid 1px;
+    padding: 20px 10px;
+    background: #5a5a5a; /* for non-css3 browsers */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9dc462', endColorstr='#569551'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#9dc462), to(#569551)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #9dc462,  #569551); /* for firefox 3.6+ */
+  }
+  
+  #tableTop .tableColumn0 {
+    min-width: 100px;
+    max-width: 100px;
+    -border-top-left-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -border-bottom-left-radius: 5px;
+    -moz-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+  }
+  
+  #tableTop .tableColumn1 {
+    min-width: 200px;
+    max-width: 200px;
+  }
+  
+  #tableTop .tableColumn2 {
+    min-width: 100px;
+    max-width: 100px;
+  }
+  
+  #tableTop .tableColumn3 {
+    min-width: 100px;
+    max-width: 100px;
+  }
+  
+  #tableTop .tableColumn4 {
+    min-width: 200px;
+    max-width: 200px;
+  }
+  
+  #tableTop .tableColumn5 {
+    min-width: 100px;
+    max-width: 100px;
+  }
+  
+  #tableTop .tableColumn6 {
+    min-width: 150px;
+    max-width: 150px;
+    -border-top-right-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -border-bottom-right-radius: 5px;
+    -moz-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    border: none;
   }
   
   #tableList {
-    min-width: 914px;
-    max-width: 914px;
-    border: #000 solid 1px;
+    position: absolute;
+    font-size: 0.8em;
+    min-width: 1000px;
+    max-width: 1000px;
     padding: 0px;
     margin: 31px 0px 0px 0px;
-    .tableListElement {
-      display: inline;
-      position: absolute; /* use different classes for each column */
-      min-width: 109px;
-      max-width: 109px;
-      min-height: 30px;
-      max-height: 30px;
-      border: none;
-      border: #000 solid 1px;
-      padding: 0px 10px;
-      margin: 0px;
-    }
+  }
+  
+  #tableList .tableListElement {
+    display: inline;
+    position: absolute; /* use different classes for each column */
+    text-align: center;
+    min-height: 40px;
+    max-height: 40px;
+    border: none;
+    border-right: #000 solid 1px;
+    padding: 10px 10px;
+    margin: 0px;
+  }
+  
+  #tableList .tableListCol0 {
+    min-width: 100px;
+    max-width: 100px;
+    left: 0px;
+  }
+  
+  #tableList .tableListCol1 {
+    min-width: 200px;
+    max-width: 200px;
+    left: 121px;
+    white-space: nowrap;
+  }
+  
+  #tableList .tableListCol2 {
+    min-width: 100px;
+    max-width: 100px;
+    left: 342px;
+  }
+  
+  #tableList .tableListCol3 {
+    min-width: 100px;
+    max-width: 100px;
+    left: 463px;
+  }
+  
+  #tableList .tableListCol4 {
+    min-width: 200px;
+    max-width: 200px;
+    left: 584px;
+  }
+  
+  #tableList .tableListCol5 {
+    min-width: 100px;
+    max-width: 100px;
+    left: 805px;
+  }
+  
+  #tableList .tableListCol6 {
+    min-width: 150px;
+    max-width: 150px;
+    left: 926px;
+    border: none;
   }
   
   .project {

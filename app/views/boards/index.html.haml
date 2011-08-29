@@ -1,25 +1,34 @@
-- curRow = 0
-- grayBG = false
+- @curRow = 0
+- @grayBG = false
 - unless @p.nil?
   - @p.each do |p|
+    @venue = p.name[0..(p.name[.]-4)]
+    @eventDate = p.name.sub(/\d\d[.]\d\d[.]\d\d/)
+    @eventName = p.name[(p.name[:]+2)..p.name.length]
     - @b.get_todos(p).each do |todo|
       - todo.todo_items.each do |item|
-        - @margin = "margin-top:" + (curRow*30).to_s + "px"
-        .tableListElement
-          venue
-        .tableListElement
+        - @margin = "top:" + (@curRow*40).to_s + "px;"
+        - if @grayBG
+          - @grayBG = false
+          - @margin = @margin + "background-color: #F0F0F0;"
+        - else
+          - @grayBG = true
+          - @margin = @margin + "background-color: white;"
+        .tableListElement.tableListCol0{:style => @margin}
+          = @venue
+        .tableListElement.tableListCol1{:style => @margin}
           = p.name
-        .tableListElement
+        .tableListElement.tableListCol2{:style => @margin}
+          = @eventDate
+        .tableListElement.tableListCol3{:style => @margin}
           = item.content
-        .tableListElement
-          venue
-        .tableListElement
+        .tableListElement.tableListCol4{:style => @margin}
           = todo.name.nil? ? todo.description : todo.name
-        .tableListElement
+        .tableListElement.tableListCol5{:style => @margin}
           - if (item.respond_to?(:due_at) && !item.due_at.nil?)
             = item.due_at.strftime("%d %b %Y")
-        .tableListElement
+        .tableListElement.tableListCol6{:style => @margin}
           - if item.respond_to?(:responsible_party_name)
             = item.responsible_party_name
-        %br/
+        - @curRow += 1
       -#%div.clear
