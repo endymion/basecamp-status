@@ -42,7 +42,11 @@ body.one-col {
   background: -moz-linear-gradient(top,  #808080,  #5a5a5a); /* for firefox 3.6+ *
   */
 
-
+  #wrapper {
+    width: 90%;
+    margin: 40px auto;
+  }
+  
   #container {
     @include container;
     padding: 30px;
@@ -51,14 +55,8 @@ body.one-col {
     min-height: 565px;
   }
 
-  #wrapper {
-    width: 90%;
-    margin: 10px auto;
-  }
-
   #header {
     @include column($blueprint-grid-columns);
-    width: 50%;
     min-height: 100px;
     max-height: 100px;
     padding: 0px;
@@ -93,6 +91,10 @@ body.one-col {
     margin-top: 30px;
   }
   
+  #content {
+    position: absolute;
+  }
+  
   #content li {
     list-style: none;
     @include column($blueprint-grid-columns);
@@ -112,7 +114,7 @@ body.one-col {
     text-align: center;
     max-height: 10px;
     border: none;
-    border-right: #000 solid 1px;
+    border-right: #444 solid 1px;
     padding: 20px 10px;
     background: #5a5a5a; /* for non-css3 browsers */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9dc462', endColorstr='#569551'); /* for IE */
@@ -184,8 +186,8 @@ body.one-col {
     min-height: 40px;
     max-height: 40px;
     border: none;
-    border-right: #000 solid 1px;
-    padding: 10px 10px;
+    border-right: #AAA solid 1px;
+    padding: 10px;
     margin: 0px;
   }
   

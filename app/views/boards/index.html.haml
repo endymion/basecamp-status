@@ -2,12 +2,16 @@
 - @grayBG = false
 - unless @p.nil?
   - @p.each do |p|
-    @venue = p.name[0..(p.name[.]-4)]
-    @eventDate = p.name.sub(/\d\d[.]\d\d[.]\d\d/)
-    @eventName = p.name[(p.name[:]+2)..p.name.length]
+    - @dotPos = p.name.index('.')
+    - unless @dotPos == nil
+      - @venue = p.name[0..(@dotPos-4)]
+    - @eventDate = p.name[/\d{1,2}[.]\d{1,2}[.]\d{1,2}/]
+    - @colonPos = p.name.index(':')
+    - unless @colonPos == nil
+      - @eventName = p.name[(@colonPos+2)..(p.name.length)]
     - @b.get_todos(p).each do |todo|
       - todo.todo_items.each do |item|
-        - @margin = "top:" + (@curRow*40).to_s + "px;"
+        - @margin = "top:" + (@curRow*60).to_s + "px;"
         - if @grayBG
           - @grayBG = false
           - @margin = @margin + "background-color: #F0F0F0;"
@@ -17,7 +21,7 @@
         .tableListElement.tableListCol0{:style => @margin}
           = @venue
         .tableListElement.tableListCol1{:style => @margin}
-          = p.name
+          = @eventName
         .tableListElement.tableListCol2{:style => @margin}
           = @eventDate
         .tableListElement.tableListCol3{:style => @margin}
