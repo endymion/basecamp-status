@@ -14,25 +14,26 @@
         - @margin = "top:" + (@curRow*60).to_s + "px;"
         - if @grayBG
           - @grayBG = false
-          - @margin = @margin + "background-color: #F0F0F0;"
+          - @style = "background-color: #F0F0F0;"
         - else
           - @grayBG = true
-          - @margin = @margin + "background-color: white;"
-        .tableListElement.tableListCol0{:style => @margin}
-          = @venue
-        .tableListElement.tableListCol1{:style => @margin}
-          = @eventName
-        .tableListElement.tableListCol2{:style => @margin}
-          = @eventDate
-        .tableListElement.tableListCol3{:style => @margin}
-          = item.content
-        .tableListElement.tableListCol4{:style => @margin}
-          = todo.name.nil? ? todo.description : todo.name
-        .tableListElement.tableListCol5{:style => @margin}
-          - if (item.respond_to?(:due_at) && !item.due_at.nil?)
-            = item.due_at.strftime("%d %b %Y")
-        .tableListElement.tableListCol6{:style => @margin}
-          - if item.respond_to?(:responsible_party_name)
-            = item.responsible_party_name
+          - @style = "background-color: white;"
+        %tr{:style => @style}
+          %td.tableListElement
+            = @venue
+          %td.tableListElement
+            = @eventName
+          %td.tableListElement
+            = @eventDate
+          %td.tableListElement
+            = item.content
+          %td.tableListElement
+            = todo.name.nil? ? todo.description : todo.name
+          %td.tableListElement
+            - if (item.respond_to?(:due_at) && !item.due_at.nil?)
+              = item.due_at.strftime("%d %b %Y")
+          %td.tableListElement
+            - if item.respond_to?(:responsible_party_name)
+              = item.responsible_party_name
         - @curRow += 1
       -#%div.clear

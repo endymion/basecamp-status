@@ -106,8 +106,7 @@ body.one-col {
     align: center;
   }
   
-  #tableTop .tableColumnHeader {
-    display: inline;
+  .tableColumnHeader {
     float: left;
     color: white;
     font-weight: 800;
@@ -179,9 +178,7 @@ body.one-col {
     margin: 31px 0px 0px 0px;
   }
   
-  #tableList .tableListElement {
-    display: inline;
-    position: absolute; /* use different classes for each column */
+  .tableListElement {
     text-align: center;
     min-height: 40px;
     max-height: 40px;
@@ -189,6 +186,7 @@ body.one-col {
     border-right: #AAA solid 1px;
     padding: 10px;
     margin: 0px;
+    font-size: 0.8em;
   }
   
   #tableList .tableListCol0 {

@@ -49,6 +49,10 @@ $(document).ready(function(){
   $('#names').change(function() {
     filter_by_name();
   });
+  
+
+  $("#main_board").tablesorter(); 
+
 });
 
 
