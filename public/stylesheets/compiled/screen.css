@@ -606,7 +606,7 @@ body.one-col .tableColumnHeader {
   background: -moz-linear-gradient(top, #9dc462, #569551);
   /* for firefox 3.6+ */
 }
-/* line 126, ../../../app/stylesheets/screen.scss */
+/* line 125, ../../../app/stylesheets/screen.scss */
 body.one-col #tableTop .tableColumn0 {
   min-width: 100px;
   max-width: 100px;
@@ -617,32 +617,32 @@ body.one-col #tableTop .tableColumn0 {
   -moz-border-bottom-left-radius: 5px;
   -webkit-border-bottom-left-radius: 5px;
 }
-/* line 137, ../../../app/stylesheets/screen.scss */
+/* line 136, ../../../app/stylesheets/screen.scss */
 body.one-col #tableTop .tableColumn1 {
   min-width: 200px;
   max-width: 200px;
 }
-/* line 142, ../../../app/stylesheets/screen.scss */
+/* line 141, ../../../app/stylesheets/screen.scss */
 body.one-col #tableTop .tableColumn2 {
   min-width: 100px;
   max-width: 100px;
 }
-/* line 147, ../../../app/stylesheets/screen.scss */
+/* line 146, ../../../app/stylesheets/screen.scss */
 body.one-col #tableTop .tableColumn3 {
   min-width: 100px;
   max-width: 100px;
 }
-/* line 152, ../../../app/stylesheets/screen.scss */
+/* line 151, ../../../app/stylesheets/screen.scss */
 body.one-col #tableTop .tableColumn4 {
   min-width: 200px;
   max-width: 200px;
 }
-/* line 157, ../../../app/stylesheets/screen.scss */
+/* line 156, ../../../app/stylesheets/screen.scss */
 body.one-col #tableTop .tableColumn5 {
   min-width: 100px;
   max-width: 100px;
 }
-/* line 162, ../../../app/stylesheets/screen.scss */
+/* line 161, ../../../app/stylesheets/screen.scss */
 body.one-col #tableTop .tableColumn6 {
   min-width: 150px;
   max-width: 150px;
@@ -654,7 +654,19 @@ body.one-col #tableTop .tableColumn6 {
   -webkit-border-bottom-right-radius: 5px;
   border: none;
 }
-/* line 174, ../../../app/stylesheets/screen.scss */
+/* line 173, ../../../app/stylesheets/screen.scss */
+body.one-col .headerSortUp {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9dc462', endColorstr='#3B5B38');
+  background: -webkit-gradient(linear, left top, left bottom, from(#9dc462), to(#3b5b38));
+  background: -moz-linear-gradient(top, #9dc462, #3b5b38);
+}
+/* line 179, ../../../app/stylesheets/screen.scss */
+body.one-col .headerSortDown {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9dc462', endColorstr='#3B5B38');
+  background: -webkit-gradient(linear, left top, left bottom, from(#9dc462), to(#3b5b38));
+  background: -moz-linear-gradient(top, #9dc462, #3b5b38);
+}
+/* line 185, ../../../app/stylesheets/screen.scss */
 body.one-col .header div {
   background-image: url("/images/header-bg.gif");
   background-position: right center;
@@ -663,15 +675,15 @@ body.one-col .header div {
   height: 20px;
   width: 20px;
 }
-/* line 183, ../../../app/stylesheets/screen.scss */
+/* line 194, ../../../app/stylesheets/screen.scss */
 body.one-col .headerSortUp div {
   background-image: url("/images/header-down.gif");
 }
-/* line 187, ../../../app/stylesheets/screen.scss */
+/* line 198, ../../../app/stylesheets/screen.scss */
 body.one-col .headerSortDown div {
   background-image: url("/images/header-up.gif");
 }
-/* line 191, ../../../app/stylesheets/screen.scss */
+/* line 202, ../../../app/stylesheets/screen.scss */
 body.one-col #tableList {
   position: absolute;
   font-size: 0.8em;
@@ -680,7 +692,7 @@ body.one-col #tableList {
   padding: 0px;
   margin: 31px 0px 0px 0px;
 }
-/* line 200, ../../../app/stylesheets/screen.scss */
+/* line 211, ../../../app/stylesheets/screen.scss */
 body.one-col .tableListElement {
   text-align: center;
   min-height: 40px;
@@ -691,59 +703,59 @@ body.one-col .tableListElement {
   margin: 0px;
   font-size: 0.8em;
 }
-/* line 211, ../../../app/stylesheets/screen.scss */
+/* line 222, ../../../app/stylesheets/screen.scss */
 body.one-col #tableList .tableListCol0 {
   min-width: 100px;
   max-width: 100px;
   left: 0px;
 }
-/* line 217, ../../../app/stylesheets/screen.scss */
+/* line 228, ../../../app/stylesheets/screen.scss */
 body.one-col #tableList .tableListCol1 {
   min-width: 200px;
   max-width: 200px;
   left: 121px;
   white-space: nowrap;
 }
-/* line 224, ../../../app/stylesheets/screen.scss */
+/* line 235, ../../../app/stylesheets/screen.scss */
 body.one-col #tableList .tableListCol2 {
   min-width: 100px;
   max-width: 100px;
   left: 342px;
 }
-/* line 230, ../../../app/stylesheets/screen.scss */
+/* line 241, ../../../app/stylesheets/screen.scss */
 body.one-col #tableList .tableListCol3 {
   min-width: 100px;
   max-width: 100px;
   left: 463px;
 }
-/* line 236, ../../../app/stylesheets/screen.scss */
+/* line 247, ../../../app/stylesheets/screen.scss */
 body.one-col #tableList .tableListCol4 {
   min-width: 200px;
   max-width: 200px;
   left: 584px;
 }
-/* line 242, ../../../app/stylesheets/screen.scss */
+/* line 253, ../../../app/stylesheets/screen.scss */
 body.one-col #tableList .tableListCol5 {
   min-width: 100px;
   max-width: 100px;
   left: 805px;
 }
-/* line 248, ../../../app/stylesheets/screen.scss */
+/* line 259, ../../../app/stylesheets/screen.scss */
 body.one-col #tableList .tableListCol6 {
   min-width: 150px;
   max-width: 150px;
   left: 926px;
   border: none;
 }
-/* line 255, ../../../app/stylesheets/screen.scss */
+/* line 266, ../../../app/stylesheets/screen.scss */
 body.one-col .project {
   margin: 0;
 }
-/* line 259, ../../../app/stylesheets/screen.scss */
+/* line 270, ../../../app/stylesheets/screen.scss */
 body.one-col .project-name {
   margin: 5px 0;
 }
-/* line 263, ../../../app/stylesheets/screen.scss */
+/* line 274, ../../../app/stylesheets/screen.scss */
 body.one-col .project-name h1 {
   color: white;
   font-size: 20px;
@@ -760,7 +772,7 @@ body.one-col .project-name h1 {
   border: 1px #305972 solid;
   box-shadow: 0 4px 2px -2px #bbbaba;
 }
-/* line 276, ../../../app/stylesheets/screen.scss */
+/* line 287, ../../../app/stylesheets/screen.scss */
 body.one-col .todo-list {
   padding-left: 40px;
   margin: 20px 0 0 30px;
@@ -769,16 +781,16 @@ body.one-col .todo-list {
   border-bottom: #ccc dotted 1px;
   padding: 0 0 10px 0px;
 }
-/* line 285, ../../../app/stylesheets/screen.scss */
+/* line 296, ../../../app/stylesheets/screen.scss */
 body.one-col .items {
   margin: 10px 0 10px 0;
   min-height: 5px;
 }
-/* line 290, ../../../app/stylesheets/screen.scss */
+/* line 301, ../../../app/stylesheets/screen.scss */
 body.one-col ul {
   margin-top: 20px;
 }
-/* line 295, ../../../app/stylesheets/screen.scss */
+/* line 306, ../../../app/stylesheets/screen.scss */
 body.one-col li.item {
   padding-left: 40px;
   color: #303030;
@@ -788,7 +800,7 @@ body.one-col li.item {
   font-family: arial;
   padding-left: 0px;
 }
-/* line 305, ../../../app/stylesheets/screen.scss */
+/* line 316, ../../../app/stylesheets/screen.scss */
 body.one-col .assigned-to, body.one-col .due-date {
   margin: 0 0 0 10px;
   font-size: 12px;
@@ -799,16 +811,16 @@ body.one-col .assigned-to, body.one-col .due-date {
   -webkit-border-radius: 5px;
   -border-radius: 5px;
 }
-/* line 316, ../../../app/stylesheets/screen.scss */
+/* line 327, ../../../app/stylesheets/screen.scss */
 body.one-col .clear {
   clear: both;
 }
-/* line 320, ../../../app/stylesheets/screen.scss */
+/* line 331, ../../../app/stylesheets/screen.scss */
 body.one-col #assigned {
   float: right;
   margin-top: 3px;
 }
-/* line 323, ../../../app/stylesheets/screen.scss */
+/* line 334, ../../../app/stylesheets/screen.scss */
 body.one-col #assigned h3 {
   font-size: 16px;
   color: #555555;
@@ -816,7 +828,7 @@ body.one-col #assigned h3 {
   text-align: left;
   float: left;
 }
-/* line 330, ../../../app/stylesheets/screen.scss */
+/* line 341, ../../../app/stylesheets/screen.scss */
 body.one-col #assigned #names {
   float: right;
   margin: 0 0 0 5px;
