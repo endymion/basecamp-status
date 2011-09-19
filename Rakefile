@@ -4,5 +4,13 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake/dsl_definition'
 require 'rake'
+require 'cachebasecamp'
 
 BasecampStatus::Application.load_tasks
+
+task :cron => :environment do
+  puts '############ ' + Time.now.to_s + ' ## Start cron Cache Basecamp'
+  cachebase = Cachebasecamp.new
+  cachebase.save_todos
+  puts '############ ' + Time.now.to_s + ' ## Finish cron Cache Basecamp'
+end
