@@ -11,7 +11,6 @@
       - @eventName = p.name[(@colonPos+2)..(p.name.length)]
     - @b.get_todos(p).each do |todo|
       - todo.todo_items.each do |item|
-        - @margin = "top:" + (@curRow*60).to_s + "px;"
         - if @grayBG
           - @grayBG = false
           - @style = "background-color: #F0F0F0;"

@@ -8,6 +8,7 @@ gem "haml"
 gem "compass"
 gem "jquery-rails"
 gem "heroku"
+gem "mongo_mapper"
 
 group :development, :test do
   gem "rspec-rails", ">= 2.0.0.beta.17"
