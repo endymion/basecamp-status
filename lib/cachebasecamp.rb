@@ -1,7 +1,7 @@
 require 'basecamp'
 
-APITOKEN = ENV['BASECAMP_TOKEN'] 
-URL = ENV['BASECAMP_URL'] 
+APITOKEN = ENV['BASECAMP_TOKEN'] || '74154e8fa88ade84971717cddb3e59fdb619800f'
+URL = ENV['BASECAMP_URL'] || 'angelmg.basecamphq.com'
 
 class Cachebasecamp
 
@@ -30,13 +30,17 @@ class Cachebasecamp
   def split_project_name(part, project_name)
     dotPos = project_name.index('.')
     colonPos = project_name.index(':')
-    case part
-      when "venue"
-        !dotPos.nil? ? project_name[0..(dotPos-4)] : ''
-      when "event"
-        !colonPos.nil? ? project_name[(colonPos+2)..(project_name.length)] : ''
-      when "event_date"
-        project_name[/\d{1,2}[.]\d{1,2}[.]\d{1,2}/]
-    end
+    begin
+      case part
+        when "venue"
+          !dotPos.nil? ? project_name[0..(dotPos-4)] : ''
+        when "event"
+          !colonPos.nil? ? project_name[(colonPos+2)..(project_name.length)] : ''
+        when "event_date"
+          project_name[/\d{1,2}[.]\d{1,2}[.]\d{1,2}/]
+      end
+    rescue
+      return ''  
+    end  
   end
 end
