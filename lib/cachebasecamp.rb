@@ -14,7 +14,7 @@ class Cachebasecamp
   end  
   
   def get_todos(project_id)
-    Basecamp::TodoList.all(project_id)
+    Basecamp::TodoList.all(project_id).flatten
   end
   
   def save_todos 
