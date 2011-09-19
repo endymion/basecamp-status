@@ -1,38 +1,26 @@
 - @curRow = 0
 - @grayBG = false
-- unless @p.nil?
-  - @p.each do |p|
-    - @dotPos = p.name.index('.')
-    - unless @dotPos == nil
-      - @venue = p.name[0..(@dotPos-4)]
-    - @eventDate = p.name[/\d{1,2}[.]\d{1,2}[.]\d{1,2}/]
-    - @colonPos = p.name.index(':')
-    - unless @colonPos == nil
-      - @eventName = p.name[(@colonPos+2)..(p.name.length)]
-    - @b.get_todos(p).each do |todo|
-      - todo.todo_items.each do |item|
-        - if @grayBG
-          - @grayBG = false
-          - @style = "background-color: #F0F0F0;"
-        - else
-          - @grayBG = true
-          - @style = "background-color: white;"
-        %tr{:style => @style}
-          %td.tableListElement
-            = @venue
-          %td.tableListElement
-            = @eventName
-          %td.tableListElement
-            = @eventDate
-          %td.tableListElement
-            = item.content
-          %td.tableListElement
-            = todo.name.nil? ? todo.description : todo.name
-          %td.tableListElement
-            - if (item.respond_to?(:due_at) && !item.due_at.nil?)
-              = item.due_at.strftime("%d %b %Y")
-          %td.tableListElement
-            - if item.respond_to?(:responsible_party_name)
-              = item.responsible_party_name
-        - @curRow += 1
-      -#%div.clear
+- unless @todos.nil?
+  - @todos.get_todos(p).each do |todo|
+    - if @grayBG
+      - @grayBG = false
+      - @style = "background-color: #F0F0F0;"
+    - else
+      - @grayBG = true
+      - @style = "background-color: white;"
+    %tr{:style => @style}
+      %td.tableListElement
+        = todo.venue
+      %td.tableListElement
+        = todo.event
+      %td.tableListElement
+        EventDate
+      %td.tableListElement
+        = todo.todo_list
+      %td.tableListElement
+        = todo.todo_item
+      %td.tableListElement
+        = todo.due_date
+      %td.tableListElement
+        = todo.asigned_to
+    - @curRow += 1
