@@ -20,7 +20,11 @@ class Cachebasecamp
   def save_todos 
     get_projects.each do |project|
       get_todos(project.id).each do |todo|  
-        todo.todo_items.each do |item|   
+        todo.todo_items.each do |item|
+          puts item.inspect
+          puts todo.inspect
+          puts project.inspect   
+          puts "---------"
           CachedTodo.new(:todo_id => todo.id, :venue => split_project_name("venue", project.name), :event => split_project_name("event", project.name), :event_date => split_project_name("event_date", project.name), :todo_list => item.content, :todo_item => (todo.name.nil? ? todo.description : todo.name), :due_date => (!item.due_at.nil? ? item.due_at.strftime("%d %b %Y") : ''), :asigned_to => (item.responsible_party_name? ? item.responsible_party_name : '')).save
         end
       end
@@ -30,7 +34,6 @@ class Cachebasecamp
   def split_project_name(part, project_name)
     dotPos = project_name.index('.')
     colonPos = project_name.index(':')
-    begin
       case part
         when "venue"
           !dotPos.nil? ? project_name[0..(dotPos-4)] : ''
@@ -39,8 +42,5 @@ class Cachebasecamp
         when "event_date"
           project_name[/\d{1,2}[.]\d{1,2}[.]\d{1,2}/]
       end
-    rescue
-      return ''  
-    end  
   end
 end
