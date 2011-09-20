@@ -50,8 +50,19 @@ $(document).ready(function(){
     filter_by_name();
   });
   
-
   $("#main_board").tablesorter(); 
+
+  $(".asigned_to").each(function(){
+    $(this).click(function(){
+       $(this).html("<input type='text' value='"+ $(this).html().trim() +"'>");
+       $("input", this).focus();
+    });
+
+    $(this).focusout(function(){
+       $(this).html($("input", this).val());
+    }); 
+    
+  });
 
 });
 
