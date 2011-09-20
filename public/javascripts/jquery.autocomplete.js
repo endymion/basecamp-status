@@ -3,7 +3,7 @@ jQuery.autocomplete = function(input, options) {
 	var me = this;
 
 	// Create jQuery object for input element
-	var $input = $(input).attr("autocomplete", "off");
+	var $input = $(input).attr("autocomplete", "on");
 
 	// Apply inputClass if necessary
 	if (options.inputClass) $input.addClass(options.inputClass);
