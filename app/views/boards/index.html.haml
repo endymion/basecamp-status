@@ -21,6 +21,6 @@
         = todo.todo_item
       %td.tableListElement
         = todo.due_date
-      %td.tableListElement
+      %td.tableListElement.asigned_to{:id => todo.project_id.to_s + "-" + todo.todo_id.to_s + "-" + todo.item_id.to_s}
         = todo.asigned_to
     - @curRow += 1

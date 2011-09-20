@@ -13,7 +13,17 @@ class Cachebasecamp
   def get_todos(project_id)
     Basecamp::TodoList.all(project_id).flatten
   end
+
+  def get_person_by_project(project_id)
+    Basecamp::Person.find(:all, :params => {:project_id => project_id})
+  end
   
+  def update_todo_item_assigned(params)
+   item = Basecamp::TodoItem.find(params[:item_id])
+   item.responsible_party = params[:responsible_party_id]
+   item.save
+  end
+
   def save_todos 
     get_projects.each do |project|
       if project.status == "active" 
