@@ -211,7 +211,8 @@ body.one-col {
   .tableListElement {
     text-align: center;
     min-height: 40px;
-    max-height: 40px;
+    max-height: 60px;
+    max-width: 200px;
     border: none;
     border-right: #AAA solid 1px;
     padding: 10px;
@@ -343,4 +344,26 @@ body.one-col {
       margin: 0 0 0 5px;
     }
   }
+
+  #venue_list{
+    background-color: white;
+    border: 1px solid;
+    font-size: 0.8em;
+    height: 100%;
+    padding-bottom: 10px;
+    position: absolute;
+    top: 265px;
+    width: 169px;
+    z-index: 10;  
+    display: none;
+
+    input{
+      width: 10%;
+    }
+  }
+
+  #show_venue_list{
+    cursor: pointer;
+  }
+
 }

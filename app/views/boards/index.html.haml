@@ -8,7 +8,10 @@
     - else
       - @grayBG = true
       - @style = "background-color: white;"
-    %tr{:style => @style}
+    - class_name = todo.venue.gsub(' ', '_')
+    - if class_name == "N/D"
+      - class_name = "N_D"
+    %tr{:style => @style, :class => class_name}
       %td.tableListElement
         = todo.venue
       %td.tableListElement
@@ -16,9 +19,9 @@
       %td.tableListElement
         EventDate
       %td.tableListElement
-        = todo.todo_list
-      %td.tableListElement
         = todo.todo_item
+      %td.tableListElement
+        = todo.todo_list
       %td.tableListElement
         = todo.due_date
       %td.tableListElement.asigned_to{:id => todo.project_id.to_s + "-" + todo.todo_id.to_s + "-" + todo.item_id.to_s}

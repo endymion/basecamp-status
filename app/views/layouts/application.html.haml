@@ -25,23 +25,32 @@
         -# #assigned
           -# %h3 Assigned to:
           -# =select_tag(:names, options_for_select([['Show All', 0]]))
+        #venue_list
+          - @venues.each do |venue|
+            - class_name = venue.gsub(' ', '_')
+            - if class_name == "N/D"
+              - class_name = "N_D" 
+            %input{:type => 'checkbox', :name => venue, :checked => true, :onClick => "hide_show('#{class_name}');"}= venue
+            %br 
+
         #content
+          %img{:src => '/images/list.png', :width => '32', :id => "show_venue_list"}
           %table.tablesorter{:id => 'main_board'}
             %thead
               %tr
-                %th.tableColumnHeader{:width => '100'}
+                %th.tableColumnHeader{:width => '150'}
                   Venue
                   %div
-                %th.tableColumnHeader{:width => '200'}
+                %th.tableColumnHeader{:width => '150'}
                   Project Name
                   %div
                 %th.tableColumnHeader{:width => '120'}
                   Event Date
                   %div
-                %th.tableColumnHeader{:width => '200'}
+                %th.tableColumnHeader{:width => '150'}
                   To-Do List
                   %div
-                %th.tableColumnHeader{:width => '200'}
+                %th.tableColumnHeader{:width => '150'}
                   To-Do Item
                   %div
                 %th.tableColumnHeader{:width => '120'}

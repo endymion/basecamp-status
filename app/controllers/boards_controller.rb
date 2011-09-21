@@ -6,6 +6,21 @@ class BoardsController < ApplicationController
     response.headers['Cache-Control'] = 'public, max-age=300'
     page = !params[:page].nil? ? params[:page] : 1
     @todos = CachedTodo.all
+    @venues  = []
+    finded = false
+    @todos.each do |item|
+      @venues.each do |venue|
+        if venue == item.venue
+          finded = true
+          break
+        end
+      end
+      if finded == false
+        @venues << item.venue
+      else
+        finded = false
+      end
+    end
   end
   
   def get_person_by_project

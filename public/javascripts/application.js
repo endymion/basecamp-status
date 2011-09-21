@@ -47,7 +47,14 @@ function filter_by_name(){
   };
 };
 
-$(document).ready(function(){
+$(document).ready(function(){ 
+  
+  $("#venue_list").css('height', ($(document).height() - 265));
+  
+  $("#show_venue_list").click(function(){
+    $("#venue_list").toggle();  
+  });
+  
   get_names();
   fill_select();
   $('#names').change(function() {
@@ -101,3 +108,9 @@ function save_assigned(person_name, item){
   }
   setTimeout("active = false", 500);
 }
+
+function hide_show(class_name){
+  $("."+class_name).toggle();
+}
+
+
