@@ -29,7 +29,9 @@ class Cachebasecamp
       if project.status == "active" 
         get_todos(project.id).each do |todo|  
           todo.todo_items.each do |item|
-            CachedTodo.new(:project_name => project.name, :project_id => project.id, :todo_id => todo.id, :item_id => item.id, :todo_list => item.content, :todo_item => (todo.name.nil? ? todo.description : todo.name), :due_date => (!item.due_at.nil? ? item.due_at.strftime("%d %b %Y") : ''), :asigned_to => (item.responsible_party_name? ? item.responsible_party_name : '')).save
+            if item.completed == false
+              CachedTodo.new(:project_name => project.name, :project_id => project.id, :todo_id => todo.id, :item_id => item.id, :todo_list => item.content, :todo_item => (todo.name.nil? ? todo.description : todo.name), :due_date => (!item.due_at.nil? ? item.due_at.strftime("%d %b %Y") : ''), :asigned_to => (item.responsible_party_name? ? item.responsible_party_name : '')).save
+            end
           end
         end
       end
