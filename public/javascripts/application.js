@@ -51,8 +51,13 @@ $(document).ready(function(){
   
   $("#venue_list").css('height', ($(document).height() - 265));
   
+  $("#venue_list input").each(function(){
+    $(this).attr('checked', true);
+  });
+  
   $("#show_venue_list").click(function(){
-    $("#venue_list").toggle();  
+    $("#venue_list").toggle();
+    $("#venue_list").css('height', ($(document).height() - 265));
   });
   
   get_names();
