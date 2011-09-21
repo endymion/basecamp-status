@@ -46,5 +46,15 @@ class CachebasecampTest < Test::Unit::TestCase
     items = CachedTodo.where(:asigned_to => "Orlando Del Aguila")
      assert_equal items.size, 2
   end
+  
+  def test_get_venue_name
+    item = CachedTodo.last
+    assert_equal item.venue, "VenueName"
+  end
+  
+  def test_get_event_name
+    item = CachedTodo.last
+    assert_equal item.event, "EventName"
+  end
 
 end
