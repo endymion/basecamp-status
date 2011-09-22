@@ -36,7 +36,7 @@ class Cachebasecamp
         get_todos(project.id).each do |todo|  
           todo.todo_items.each do |item|
             if item.completed == false
-              ctodo = CachedTodo.first(:todo_id => todo.id)
+              ctodo = CachedTodo.first(:item_id => item.id)
               if !ctodo.nil?
                 ctodo.project_name = project.name
                 ctodo.todo_list = item.content
