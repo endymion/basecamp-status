@@ -5,6 +5,7 @@ var Persons_name = new Array();
 var Persons_id = new Array();
 var active =  false;
 var aux_name_to_back = '';
+var aux_date_to_back = '';
 var find = false;
 function get_names(){
   $("span.assigned-to").each(function(index) {
@@ -96,6 +97,25 @@ $(document).ready(function(){
     });
   });
  
+ 
+  $(".due_date").each(function(){
+    $(this).click(function(){
+       if (active == false){
+         aux_date_to_back = $(this).html();
+         active = true;
+         i_id = $(this).attr('id');
+         tempObj = this;
+         $(tempObj).html("<input id='temp_due_date_input' style='width: 80px; margin-right: 4px;' type='text' value='"+ $(tempObj).html().trim() +"'>");
+         $(tempObj).append("<img id='change_due_date_ready' src='/images/positive.png'/>");
+         $("#temp_due_date_input").datepicker({ dateFormat: 'dd M yy' }); 
+         $("#change_due_date_ready").click(function(){
+           $("#change_due_date_ready").parent().html( $('input', $("#change_due_date_ready").parent()).val() );
+           var date_aux = $(tempObj).html();
+           save_due_date(date_aux, $(tempObj).attr('id'));
+         });         
+       }
+    });
+  }); 
 });
 
 function save_assigned(person_name, item){
@@ -112,6 +132,14 @@ function save_assigned(person_name, item){
     $("#"+item).html(aux_name_to_back);
   }
   setTimeout("active = false", 500);
+}
+
+function save_due_date(date, item_id){
+$(tempObj).append("<img id='loading-icon' src='/images/loading.gif'/>");
+  $.post("/board/due_date/update", {new_date: date, item_id: item_id}, function(data){
+    $("#loading-icon").remove();
+    setTimeout("active = false", 500);
+  });
 }
 
 function hide_show(class_name){

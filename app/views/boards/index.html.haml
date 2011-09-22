@@ -22,7 +22,7 @@
         = todo.todo_item
       %td.tableListElement
         = todo.todo_list
-      %td.tableListElement
+      %td.tableListElement.due_date{:id => todo.item_id.to_s}
         = todo.due_date
       %td.tableListElement.asigned_to{:id => todo.project_id.to_s + "-" + todo.todo_id.to_s + "-" + todo.item_id.to_s}
         = todo.asigned_to

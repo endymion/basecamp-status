@@ -24,6 +24,12 @@ class Cachebasecamp
    item.save
   end
 
+  def update_todo_item_due_date(params)
+   item = Basecamp::TodoItem.find(params[:item_id])
+   item.due_at = params[:new_date]
+   item.save
+  end
+
   def save_todos 
     get_projects.each do |project|
       if project.status == "active" 
