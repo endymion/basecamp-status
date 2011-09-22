@@ -40,9 +40,9 @@ class Cachebasecamp
               if !ctodo.nil?
                 ctodo.project_name = project.name
                 ctodo.todo_list = item.content
-                ctodo.todo_item => (todo.name.nil? ? todo.description : todo.name)
-                ctodo.due_date => (!item.due_at.nil? ? item.due_at.strftime("%d %b %Y") : '')
-                ctodo.asigned_to => (item.responsible_party_name? ? item.responsible_party_name : '')
+                ctodo.todo_item = (todo.name.nil? ? todo.description : todo.name)
+                ctodo.due_date = (!item.due_at.nil? ? item.due_at.strftime("%d %b %Y") : '')
+                ctodo.asigned_to = (item.responsible_party_name? ? item.responsible_party_name : '')
                 ctodo.save
               else
                 CachedTodo.new(:project_name => project.name, :project_id => project.id, :todo_id => todo.id, :item_id => item.id, :todo_list => item.content, :todo_item => (todo.name.nil? ? todo.description : todo.name), :due_date => (!item.due_at.nil? ? item.due_at.strftime("%d %b %Y") : ''), :asigned_to => (item.responsible_party_name? ? item.responsible_party_name : '')).save
