@@ -50,6 +50,9 @@ function filter_by_name(){
 
 $(document).ready(function(){ 
   
+  //test!!
+  $("#main_board").tableFilter({exceptions: '4,5', divToDraw: 'divDrawFilter'});
+  
   $("#venue_list").css('height', ($(document).height() - 265));
   
   $("#venue_list input").each(function(){
