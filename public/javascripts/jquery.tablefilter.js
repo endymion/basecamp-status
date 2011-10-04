@@ -10,6 +10,7 @@
     //Merging the options
     var opciones_default = {
       exceptions: null,
+      imgShowhide: null,
       divToDraw: 'body'
     }  
     
@@ -92,7 +93,11 @@
   
   $.fn.tableFilter.drawFilter =  function(data, divId){
     divId = $opciones.divToDraw;
-    var newTr = "<div id='_tableFilterToggleBtn'>show/hide filter</div><div id='_tableFilterList' style='display: none; padding: 10px;'>";
+    if($opciones.imgShowhide == null){
+      var newTr = "<div id='_tableFilterToggleBtn'>show/hide filter</div><div id='_tableFilterList' style='display: none; padding: 10px;'>";
+    }else{
+      var newTr = "<div id='_tableFilterToggleBtn'><img src='"+ $opciones.imgShowhide +"'></div><div id='_tableFilterList' style='display: none; padding: 10px;'>";
+    }
     for(i=0; i<= columns_number - 1 ; i++){
       newTr += "<div style='float: left; width:auto'>";
       if($columns_titles[i] != "") {newTr += "<div class='_tableFilterTitle'>" + $columns_titles[i] + "</div>"}
@@ -107,7 +112,8 @@
   
   $.fn.tableFilter.setButtonsFunctions =function(){
     $("#_tableFilterToggleBtn").click(function(){
-      $("#_tableFilterList").toggle();
+      $("#_tableFilterList").toggle('slow', function() {
+      });
     });
     
     $("#_tableFilterList input").each(function(){
