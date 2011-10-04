@@ -6,9 +6,11 @@
     = stylesheet_link_tag 'compiled/print.css', :media => 'print'
     = stylesheet_link_tag 'jquery.autocomplete.css'
     = stylesheet_link_tag 'south-street/jquery-ui-1.8.16.custom.css'
+    = stylesheet_link_tag 'jquery.tablefilter.css'
+
     /[if lt IE 8]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
-    = javascript_include_tag 'jquery.min', 'jquery.tablesorter', 'jquery_ujs', 'application', 'jquery.autocomplete', 'jquery-ui-1.8.16.custom.min'
+    = javascript_include_tag 'jquery.min', 'jquery.tablesorter', 'jquery_ujs', 'application', 'jquery.autocomplete', 'jquery-ui-1.8.16.custom.min', 'jquery.tablefilter'
     = csrf_meta_tag
     %script{:type => "text/javascript", :src => "http://use.typekit.com/dju8kxh.js"}
     %script{:type => "text/javascript"} try{Typekit.load();}catch(e){}
@@ -36,6 +38,8 @@
 
         #content
           %img{:src => '/images/list.png', :width => '32', :id => "show_venue_list"}
+          #divDrawFilter
+      
           %table.tablesorter{:id => 'main_board'}
             %thead
               %tr
