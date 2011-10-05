@@ -3,7 +3,6 @@ require 'cachebasecamp'
 class BoardsController < ApplicationController
 
   def index
-    response.headers['Cache-Control'] = 'public, max-age=300'
     page = !params[:page].nil? ? params[:page] : 1
     @todos = CachedTodo.all
     @venues  = []
@@ -44,6 +43,17 @@ class BoardsController < ApplicationController
     item = CachedTodo.first(:item_id => params[:item_id].to_i)
     item.due_date = params[:new_date]
     item.save
+    render :text => 'updated'
+  end
+  
+  def mark_item_as_completed
+    @b_obj = Cachebasecamp.new('angelmg.basecamphq.com', '74154e8fa88ade84971717cddb3e59fdb619800f')
+    ids = params[:item_ids].split(',')
+    ids.each do |id_number|
+      @b_obj.mark_item_as_completed(id_number.to_i)
+      item = CachedTodo.first(:item_id => id_number.to_i)
+      item.delete
+    end
     render :text => 'updated'
   end
 

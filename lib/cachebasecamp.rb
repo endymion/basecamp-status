@@ -29,6 +29,13 @@ class Cachebasecamp
    item.due_at = params[:new_date]
    item.save
   end
+  
+  def mark_item_as_completed(item_id)
+    item = Basecamp::TodoItem.find(item_id)
+    puts item
+    item.completed = true
+    item.save
+  end
 
   def save_todos 
     get_projects.each do |project|

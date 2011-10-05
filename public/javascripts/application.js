@@ -150,3 +150,20 @@ function hide_show(class_name){
 }
 
 
+function mark_all_as_completed(){
+  if(confirm("Are sure to mark all visible items as completed?") == true){
+    $("#divMarkAll").append("<img id='loading-icon' src='/images/loading.gif'/>");
+    item_ids = "";
+    $("#main_board tbody tr").each(function(){
+      if($(this).css('display') != 'none'){
+        item_ids += "," + $(this).attr('id');
+      }
+    });
+    item_ids = item_ids.substring(1, item_ids.length);
+    $.post("/board/completed/update", {item_ids: item_ids}, function(data){
+      $("#loading-icon").remove();
+      window.location.replace("/");
+    });
+  }
+}
+

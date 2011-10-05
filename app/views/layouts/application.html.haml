@@ -38,7 +38,10 @@
 
         #content
           #divDrawFilter
-      
+          
+          #divMarkAll{ :style => "text-align: right; cursor: pointer;"}
+            %span{:onclick => "mark_all_as_completed();", :style => "text-align: right; cursor: pointer;"}
+              %img{:src => '/images/complete_icon.gif', :width => '20'}
           %table.tablesorter{:id => 'main_board'}
             %thead
               %tr

@@ -11,7 +11,7 @@
     - class_name = todo.venue.gsub(' ', '_')
     - if class_name == "N/D"
       - class_name = "N_D"
-    %tr{:style => @style, :class => class_name}
+    %tr{:style => @style, :class => class_name, :id => todo.item_id.to_s}
       %td.tableListElement
         = todo.venue
       %td.tableListElement
