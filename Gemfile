@@ -16,6 +16,7 @@ group :development, :test do
   gem "cucumber-rails"
   gem "capybara"
   gem "fakeweb"
+  gem "jasmine"
   gem "database_cleaner"
 end
 
