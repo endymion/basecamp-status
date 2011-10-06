@@ -7,19 +7,19 @@ describe("TableFilter Specs", function() {
 
   it("uncheck all on column 1", function() {
     $("#_tableFilterToggleBtn").click();
-    $("#_tableFilterList input.col1.checkall").click();
-    expect($("._tablefilter_row0").css("display")).toEqual("none");
-    expect($("._tablefilter_row1").css("display")).toEqual("none");  
-    expect($("._tablefilter_row2").css("display")).toEqual("none"); 
+    $("#_tableFilterList input.col1.checkall").click(); //uncheck
+    expect($("._tablefilter_row0")).toBeHidden();
+    expect($("._tablefilter_row1")).toBeHidden();
+    expect($("._tablefilter_row2")).toBeHidden();
   });
 
   it("check all on column 1", function() {
     $("#_tableFilterToggleBtn").click();
     $("#_tableFilterList input.col1.checkall").click(); //uncheck
     $("#_tableFilterList input.col1.checkall").click(); //check
-    expect($("._tablefilter_row0").attr('style')).toEqual("");
-    expect($("._tablefilter_row1").attr('style')).toEqual("");  
-    expect($("._tablefilter_row2").attr('style')).toEqual("");
+    expect($("._tablefilter_row0")).not.toBeHidden();
+    expect($("._tablefilter_row1")).not.toBeHidden();
+    expect($("._tablefilter_row2")).not.toBeHidden();
   });
   
 
