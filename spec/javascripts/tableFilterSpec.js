@@ -4,6 +4,12 @@ describe("TableFilter Specs", function() {
     loadFixtures('toTableFilter.html');
     $("#test_table").tableFilter({divToDraw: 'divDrawFilter'});
   });
+  
+  it("click on tableFilterToggleBtn display & hide filter", function(){
+    expect($("#_tableFilterList")).toBeHidden();
+    $("#_tableFilterToggleBtn").click();
+    expect($("#_tableFilterList")).not.toBeHidden();
+  });
 
   it("uncheck all on column 1", function() {
     $("#_tableFilterToggleBtn").click();
@@ -21,6 +27,15 @@ describe("TableFilter Specs", function() {
     expect($("._tablefilter_row1")).not.toBeHidden();
     expect($("._tablefilter_row2")).not.toBeHidden();
   });
+  
+  it("uncheck Hugo from filter", function() {
+    $("#_tableFilterToggleBtn").click();
+    $("#_tableFilterList input.checkoption[value='Hugo']").click();
+    expect($("._tablefilter_row0")).toBeHidden(); //row0 'Hugo' should be hidden
+    expect($("._tablefilter_row1")).not.toBeHidden();
+    expect($("._tablefilter_row2")).not.toBeHidden();
+  });
+  
   
 
 });
