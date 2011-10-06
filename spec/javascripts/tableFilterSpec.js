@@ -30,6 +30,7 @@ describe("TableFilter Specs", function() {
   });
   
   it("should have all unique items on filter list, column name", function(){
+    expect($("#_tableFilterList input[value='Hugo']").size()).toEqual(1);
     expect($("#_tableFilterList input[value='Hugo']")).toExist();
     expect($("#_tableFilterList input[value='Jose']")).toExist();
     expect($("#_tableFilterList input[value='TestName']")).toExist();
