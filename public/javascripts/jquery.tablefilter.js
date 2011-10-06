@@ -99,10 +99,13 @@
       var newTr = "<div id='_tableFilterToggleBtn'><img src='"+ $opciones.imgShowhide +"'></div><div id='_tableFilterList' style='display: none; padding: 10px;'>";
     }
     for(i=0; i<= columns_number - 1 ; i++){
-      newTr += "<div style='float: left; width:auto'>";
-      if($columns_titles[i] != "") {newTr += "<div class='_tableFilterTitle'>" + $columns_titles[i] + "</div>"}
+      newTr += "<div style='float: left; width:auto' class='scol"+ i +"'>";
+      if($columns_titles[i] != "") {
+        newTr += "<div class='_tableFilterTitle'>" + $columns_titles[i] + "</div>";
+        newTr += "<input type='checkbox' id ='scol"+ i +"' class='col"+ i +" checkall' name='checkall' value='all' checked><span>all</span><br>";
+      }
       for(j=0; j<= data[i].length - 1; j++){
-          newTr += "<input type='checkbox' name='option"+ j +"-tablefilter_column" + i + "' value='"+ data[i][j] +"' checked><span>"+ data[i][j] +"</span><br>";
+          newTr += "<input type='checkbox' class='checkoption' name='option"+ j +"-tablefilter_column" + i + "' value='"+ data[i][j] +"' checked><span>"+ data[i][j] +"</span><br>";
       }
       newTr += "</div>";
     }
@@ -116,9 +119,8 @@
       });
     });
     
-    $("#_tableFilterList input").each(function(){
-
-        $(this).click(function(){
+    $("#_tableFilterList input.checkoption").each(function(){
+        $(this).change(function(){
           column_aux = $(this).attr('name').split('-')
           column = column_aux[1];
           temp_value = $(this).val();
@@ -130,10 +132,18 @@
               }else{
                 $(this).parent().css('display','none');
               }
-              
             }
           });
         });
+    });
+    
+    $("#_tableFilterList input.checkall").each(function(){
+       $(this).click(function(){
+         $("."+$(this).attr('id') + " input.checkoption").each(function(){
+           $(this).click();
+         }); 
+
+       });
     });
    
   }
