@@ -11,6 +11,17 @@ describe("TableFilter Specs", function() {
     expect($("#_tableFilterList")).toExist();
   });
   
+  it("the table should have all the classes assigned by the plugin", function(){
+    expect($("._tablefilter_row0")).toExist();
+    expect($("._tablefilter_row1")).toExist();
+    expect($("._tablefilter_row2")).toExist();
+    expect($("._tablefilter_row3")).toExist();
+    expect($("._tablefilter_column0").size()).toEqual(4);
+    expect($("._tablefilter_column1").size()).toEqual(4);
+    expect($("._tablefilter_column2").size()).toEqual(4);
+    expect($("._tablefilter_column3").size()).toEqual(4);
+  });
+
   it("spy button show/hide filter click event", function(){
     spyOnEvent($('#_tableFilterToggleBtn'), 'click');
     $('#_tableFilterToggleBtn').click();
