@@ -5,6 +5,18 @@ describe("TableFilter Specs", function() {
     $("#test_table").tableFilter({divToDraw: 'divDrawFilter'});
   });
   
+  it("should exist basic filter elements", function(){
+    expect($("#_tableFilterToggleBtn")).toExist();
+    expect($("#_tableFilterList")).toExist();
+    expect($("#_tableFilterList")).toExist();
+  });
+  
+  it("spy button show/hide filter click event", function(){
+    spyOnEvent($('#_tableFilterToggleBtn'), 'click');
+    $('#_tableFilterToggleBtn').click();
+    expect('click').toHaveBeenTriggeredOn($('#_tableFilterToggleBtn'));
+  });
+  
   it("click on tableFilterToggleBtn display & hide filter", function(){
     expect($("#_tableFilterList")).toBeHidden();
     $("#_tableFilterToggleBtn").click();
@@ -35,7 +47,6 @@ describe("TableFilter Specs", function() {
     expect($("._tablefilter_row1")).not.toBeHidden();
     expect($("._tablefilter_row2")).not.toBeHidden();
   });
-  
   
 
 });
