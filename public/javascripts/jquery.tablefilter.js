@@ -121,28 +121,43 @@
     
     $("#_tableFilterList input.checkoption").each(function(){
         $(this).change(function(){
-          column_aux = $(this).attr('name').split('-')
-          column = column_aux[1];
-          temp_value = $(this).val();
-          temp_checked = $(this).is(':checked');
-          $("._"+column, $table_ext).each(function(){
-            if($(this).html().trim() == temp_value){
-              if(temp_checked){
-                $(this).parent().css('display','');
-              }else{
-                $(this).parent().css('display','none');
-              }
-            }
-          });
+          $.fn.tableFilter.filter();
         });
     });
+    
+    
+    $.fn.tableFilter.filter =function(){
+      $('tr', $table_ext).each(function(){
+         $(this).css('display','');
+       });
+       
+       $('#_tableFilterList input.checkoption').each(function(){
+         column_aux = $(this).attr('name').split('-')
+         column = column_aux[1];
+         temp_value = $(this).val();
+         temp_checked = $(this).is(':checked');
+         
+         $("._"+column, $table_ext).each(function(){
+           if($(this).html().trim() == temp_value){
+             if(temp_checked == false){
+               $(this).parent().css('display','none');
+             }
+           }
+         });
+         
+       });
+    }
     
     $("#_tableFilterList input.checkall").each(function(){
        $(this).click(function(){
          $("."+$(this).attr('id') + " input.checkoption").each(function(){
-           $(this).click();
+           if( $(this).is(':checked') ){
+             $(this).attr('checked', false);
+           }else{
+             $(this).attr('checked', true);
+           }
          }); 
-
+         $.fn.tableFilter.filter();
        });
     });
    
