@@ -1,3 +1,11 @@
+/*!
+ * jQuery TableFilter 1.0.0
+ * 
+ * Copyright 2011, Bakedweb.net
+ *
+ * Date: Thu Nov 03 15:04:36 2011 -0400
+ */
+
 (function($) {
   var columns_number = 0;
   var skip_column = false;
