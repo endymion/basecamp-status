@@ -43,14 +43,14 @@ body.one-col {
   */
 
   #wrapper {
-    width: 90%;
+    width: 100%;
     margin: 40px auto;
   }
   
   #container {
     @include container;
-    padding: 30px;
-    width: 95%;
+    padding: 0px;
+    width: 100%;
     margin-bottom: 30px;
     min-height: 565px;
   }
@@ -84,6 +84,7 @@ body.one-col {
     background-image: url(/images/highlight.png);
     width: 255px;
     margin-bottom: 0px;
+    margin-left: 40px;
   }
   
   #title {
@@ -93,6 +94,7 @@ body.one-col {
   
   #content {
     position: absolute;
+    width: 100%;
   }
   
   #content li {
@@ -198,6 +200,10 @@ body.one-col {
   .headerSortDown div{
     background-image: url("/images/header-up.gif");
   }
+ 
+  #main_board{
+   width: 100%;
+  } 
 
   #tableList {
     position: absolute;
