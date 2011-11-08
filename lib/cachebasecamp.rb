@@ -7,7 +7,7 @@ class Cachebasecamp
   end
   
   def get_projects
-    Basecamp::Project.all  
+    Basecamp::Project.all 
   end  
   
   def get_todos(project_id)
@@ -32,14 +32,14 @@ class Cachebasecamp
   
   def mark_item_as_completed(item_id)
     item = Basecamp::TodoItem.find(item_id)
-    puts item
     item.completed = true
     item.save
   end
 
   def save_todos 
-    get_projects.each do |project|
-      if project.status == "active" 
+     
+    get_projects.each do |project| 
+      if project.status == "active" && project.name.to_s[0] != "+" && project.name.to_s[0..5] != "proofs"
         get_todos(project.id).each do |todo|  
           todo.todo_items.each do |item|
             if item.completed == false
@@ -59,6 +59,7 @@ class Cachebasecamp
         end
       end
     end
+    
   end
   
 end
