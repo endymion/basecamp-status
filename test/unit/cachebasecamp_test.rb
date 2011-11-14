@@ -113,5 +113,11 @@ class CachebasecampTest < Test::Unit::TestCase
     item = CachedTodo.exists?(:project_id => 7638138)
     assert_equal item, false
   end  
+  
+  def test_dueDate
+    item = CachedTodo.first(:project_id => 7638136)
+    item.due_date = '25 Jun 2010'
+    assert_equal item.dueDate, "Jun 25, 2010 0:00 AM"
+  end
 
 end
