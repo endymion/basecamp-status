@@ -26,4 +26,11 @@ class CachedTodo
     !self.project_name[/\d{1,2}[.]\d{1,2}[.]\d{1,2}/].nil? ? self.project_name[/\d{1,2}[.]\d{1,2}[.]\d{1,2}/] : "N/D"
   end
   
+  def dueDate
+      dates = self.due_date.split(" ")
+      if !dates[1].nil? 
+        return dates[1] + " " + dates[0] + ", " + dates[2] + " 0:00 AM"
+      end
+  end
+  
 end
