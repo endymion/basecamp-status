@@ -2,8 +2,7 @@ $(document).ready(function(){
 
 	$.ajax({
 	  type: 'POST',
-	  url: '/reload',
-	  timeout: 500
+	  url: '/reload'
 	});
 	
 	setInterval(function(){
