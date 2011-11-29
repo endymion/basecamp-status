@@ -32,12 +32,14 @@ class BoardsController < ApplicationController
   end
   
   def reload
+    render :layout => 'loading'
+    
     rake = Rake::Application.new
     Rake.application = rake
     Rake::Task.define_task(:environment)
     load "#{Rails.root}/Rakefile"
     rake["cron"].invoke
-    render :text => 'reloaded'
+    
   end
   
   def get_person_by_project

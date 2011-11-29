@@ -2,10 +2,13 @@ $(document).ready(function(){
 
 	$.ajax({
 	  type: 'POST',
-	  url: '/reload'
+	  url: '/reload',
+	  async: false,
+	  timeout: 1500
+	
 	});
 	
-	setInterval(function(){
+	setTimeout(function(){
 		$.ajax({
 		  type: 'POST',
 		  url: '/updateFinish',
@@ -14,5 +17,5 @@ $(document).ready(function(){
 			  alert(data);
 		  }
 		});
-	},4000);
+	},60000*5);
 });
