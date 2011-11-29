@@ -1,4 +1,5 @@
 require 'cachebasecamp'
+require 'rake'
 
 class BoardsController < ApplicationController
 
@@ -31,13 +32,12 @@ class BoardsController < ApplicationController
   end
   
   def reload
-    puts "*"*50 + "Start"
-    CachedTodo.delete_all 
-    cachebase = Cachebasecamp.new('angelmg.basecamphq.com', '74154e8fa88ade84971717cddb3e59fdb619800f')
-    cachebase.save_todos
-    puts "*"*50 + "Finish"
+    rake = Rake::Application.new
+    Rake.application = rake
+    Rake::Task.define_task(:environment)
+    load "#{Rails.root}/lib/tasks/cached.rake"
+    rake["cached:save"].invoke
     render :text => 'reloaded'
-    
   end
   
   def get_person_by_project
