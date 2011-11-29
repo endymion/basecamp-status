@@ -52,14 +52,16 @@ class Cachebasecamp
                 ctodo.asigned_to = (item.responsible_party_name? ? item.responsible_party_name : '')
                 ctodo.save
               else
-                CachedTodo.new(:project_name => project.name, :project_id => project.id, :todo_id => todo.id, :item_id => item.id, :todo_list => item.content, :todo_item => (todo.name.nil? ? todo.description : todo.name), :due_date => (!item.due_at.nil? ? item.due_at.strftime("%d %b %Y") : ''), :asigned_to => (item.responsible_party_name? ? item.responsible_party_name : '')).save
+                CachedTodo.new(:update_finish => false, :project_name => project.name, :project_id => project.id, :todo_id => todo.id, :item_id => item.id, :todo_list => item.content, :todo_item => (todo.name.nil? ? todo.description : todo.name), :due_date => (!item.due_at.nil? ? item.due_at.strftime("%d %b %Y") : ''), :asigned_to => (item.responsible_party_name? ? item.responsible_party_name : '')).save
               end
             end
           end
         end
       end
     end
-    
+    lastItem = CachedTodo.last
+    lastItem.update_finish = true
+    lastItem.save
   end
   
 end

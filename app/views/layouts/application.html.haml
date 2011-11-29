@@ -37,7 +37,11 @@
             %br 
 
         #content
-          #divDrawFilter
+          #divReloadCron
+            %a{:href => '/loading'}
+              %img{:src => '/images/reload.png', :height => '48', :style => 'float: left;'}
+
+          #divDrawFilter{:style => 'float: left;'}
           
           #divMarkAll{ :style => "text-align: right; cursor: pointer; display: none;"}
             %span{:onclick => "mark_all_as_completed();", :style => "text-align: right; cursor: pointer;"}

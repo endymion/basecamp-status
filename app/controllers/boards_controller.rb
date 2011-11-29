@@ -22,6 +22,24 @@ class BoardsController < ApplicationController
     end
   end
   
+  def loading
+    render :layout => 'loading'
+  end
+  
+  def cachedUpdateFinished
+    render :text => CachedTodo.last.update_finish
+  end
+  
+  def reload
+    puts "*"*50 + "Start"
+    CachedTodo.delete_all 
+    cachebase = Cachebasecamp.new('angelmg.basecamphq.com', '74154e8fa88ade84971717cddb3e59fdb619800f')
+    cachebase.save_todos
+    puts "*"*50 + "Finish"
+    render :text => 'reloaded'
+    
+  end
+  
   def get_person_by_project
     @b_obj = Cachebasecamp.new('angelmg.basecamphq.com', '74154e8fa88ade84971717cddb3e59fdb619800f')
     persons = @b_obj.get_person_by_project(params[:project_id])

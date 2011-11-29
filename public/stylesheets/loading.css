@@ -1,0 +1,18 @@
+#wrapper{
+	width: 960px;
+	margin: 0 auto;
+}
+
+
+#mensaje {
+	width: 500px;
+	margin: 50px auto;
+}
+
+#mensaje img{
+	margin-left: 150px;
+}
+
+#mensaje h2{
+	color: #9DC462;
+}
