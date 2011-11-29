@@ -35,8 +35,8 @@ class BoardsController < ApplicationController
     rake = Rake::Application.new
     Rake.application = rake
     Rake::Task.define_task(:environment)
-    load "#{Rails.root}/lib/tasks/cached.rake"
-    rake["cached:save"].invoke
+    load "#{Rails.root}/Rakefile"
+    rake["cron"].invoke
     render :text => 'reloaded'
   end
   
